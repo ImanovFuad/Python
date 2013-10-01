@@ -64,3 +64,14 @@ This class also provides an iterator for easily iterating over the encapsulated 
 	('2013-09-14 14:00:00+0','Clear')
 	('2013-09-14 17:00:00+0','Clear')
 	('2013-09-14 20:00:00+0','Clouds')
+
+### The Forecaster class
+Instances of this class are returned by weather forecast queries such as:
+
+    f = owm.three_hours_forecast('London')
+    f = owm.daily_forecast('Buenos Aires',limit=6)
+
+A_Forecaster_ object wraps a _Forecast_ object and provides convenience methods that makes it possible to perform complex weather forecast data queries, which could not otherwise be possible using only the _Forecast_ class interface. A central concept with this regard is the "time coverage" of the forecast, that is to say the temporal length of the forecast.
+
+It is then possible to know when a weather forecast starts/ends, know which _Weather_ items in the forecast carry sunny/cloudy/... weather conditions, determine wether the forecast contains sunny/cloudy/... _Weather_ items or not and to obtain the closest _Weather_ item of the forecast to the time provided by the
+clients.
