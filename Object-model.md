@@ -56,4 +56,11 @@ The OWM web API provides two types of forecast intervals: three hours and daily;
 
 _Forecast_ instances can also tell the reception timestamp for the weather forecast, that is to say the time when the forecast has been recevied from the OWM web API.
 
-This class also provides an iterator for easily iterating over the encapsulated _Weather_ list.
+This class also provides an iterator for easily iterating over the encapsulated _Weather_ list:
+
+	>>> fcst = owm.daily_forecast('Tokyo')
+	>>> for weather in fcst:
+	...   print (weather.get_reference_time(format='iso'), weather.get_status())
+	('2013-09-14 14:00:00+0','Clear')
+	('2013-09-14 17:00:00+0','Clear')
+	('2013-09-14 20:00:00+0','Clouds')
