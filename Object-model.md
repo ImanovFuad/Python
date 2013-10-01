@@ -26,13 +26,16 @@ The methods illustrated above return a single object instance (_Observation_ or 
 This class also tells you the PyOWM library version and the currently supported OWM web API version.
 
 ### The Weather class
-TBD
+This class is a databox containing information about weather conditions in a place. Stored data include text information such as weather status (sunny/rainy/snowy/...) and numeric information such as the values of measured phyisical entities (mx/min/current temperatures, wind speed/orientation, humidity, pressure, cloud coverage, ...). 
 
+Some types of data are grouped and stored into Python dictionaries, such as weather and temperature info.
+
+This class also stores the reference timestamp for the weather data, that is to say the time when the data was measured.
 
 ### The Observation class
 An instance of this class is returned whenever a query about currently observed weather in a location is issued (hence, its name).
 
-The _Observation_ class keeps together information about weather features that are currently being observed in a specific location in the world and that are stored as a _Weather_ object instance and the details about the location, which is stored into the class as a _Location_ object instance. Both current weather and location info are obtained via OWM web API responses parsing, which done by other classes in the PyOWM library: usually this data parsing stage ends with their storage into a newly created _Observation_ instance.
+The _Observation_ class binds information about weather features that are currently being observed in a specific location in the world and that are stored as a _Weather_ object instance and the details about the location, which is stored into the class as a _Location_ object instance. Both current weather and location info are obtained via OWM web API responses parsing, which done by other classes in the PyOWM library: usually this data parsing stage ends with their storage into a newly created _Observation_ instance.
 
 When created, every _Observation_ instance is fed with a timestamp that tells when the weather observation data have been received.
 
