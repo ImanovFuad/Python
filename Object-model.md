@@ -25,6 +25,9 @@ The methods illustrated above return a single object instance (_Observation_ or 
 
 This class also tells you the PyOWM library version and the currently supported OWM web API version.
 
+### The Location class
+The _Location_ class represents a location in the world. Each instance stores the geographic name of the location, the longitude/latitude couple and the country name. These data are retrieved from the OWM web API responses' payloads.
+
 ### The Weather class
 This class is a databox containing information about weather conditions in a place. Stored data include text information such as weather status (sunny/rainy/snowy/...) and numeric information such as the values of measured phyisical entities (mx/min/current temperatures, wind speed/orientation, humidity, pressure, cloud coverage, ...). 
 
@@ -45,3 +48,12 @@ When using _OWM_ class for the retrieval of currently observed weather in multip
     owm.find_weather_by_coords(-2.15, 57.0)
 
 a list of _Observation_ instances is returned to the clients.
+
+### The Forecast class
+This class represents a weather forecast for a specific location in the world. A weather forecast is made out by location data - encapsulated by a _Location_ object - and a collection of weather conditions - a list of _Weather_ objects.
+
+The OWM web API provides two types of forecast intervals: three hours and daily; each _Forecast_ instance has a specific fields that tells the interval of the forecast. 
+
+_Forecast_ instances can also tell the reception timestamp for the weather forecast, that is to say the time when the forecast has been recevied from the OWM web API.
+
+This class also provides an iterator for easily iterating over the encapsulated _Weather_ list.
