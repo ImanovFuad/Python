@@ -75,3 +75,21 @@ A_Forecaster_ object wraps a _Forecast_ object and provides convenience methods 
 
 It is then possible to know when a weather forecast starts/ends, know which _Weather_ items in the forecast carry sunny/cloudy/... weather conditions, determine wether the forecast contains sunny/cloudy/... _Weather_ items or not and to obtain the closest _Weather_ item of the forecast to the time provided by the
 clients.
+
+### Utilities functions
+
+A few packages are provided, containing utility functions that support the base PyOWM entity classes and the user:
+
+**conversion utils**: conversions between temperature units and timeformats
+**HTTP utils**: network communications with the OWM web API
+**JSON parsing utils**: parsing of OWM web API JSON responses and objects creation
+**time utils**: convenience time functions for library users
+**weather utils**: searching and filtering collections of _Weather_ objects
+**XML utls**: dump data to XML 
+
+### Exception classes
+
+**APICallError** class: raises when failures in OWM web API invocation occur
+**APIResponseError** class: raised when HTTP error status codes occur in OWM web API responses
+**NotFoundError** class: raised when a search for an item in a collection has no result
+**ParseResponseError** class: raised when failures occur in parsing payload data coming from OWM web API responses
