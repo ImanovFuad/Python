@@ -6,10 +6,13 @@ and forecast) from Python applications via a simple object model.
 
 PyOWM is released under the [MIT](https://github.com/csparpa/pyowm/blob/master/LICENSE) license.
 
-PyOWM does not require any additional library. Only the Python 2.7+ standard library modules are required.
+PyOWM does not require any additional library to the standard Python library modules.
 
 ### Current PyOWM version
 0.1
+
+### Currently supported Python versions
+2.6, 2.7
 
 ### Currently supported OWM API version
 2.5
