@@ -38,6 +38,12 @@ Some types of data are grouped and stored into Python dictionaries, such as weat
 
 This class also stores the reference timestamp for the weather data, that is to say the time when the data was measured.
 
+When using _OWM_ class for the retrieval of weather history on a location, eg:
+
+    owm.weather_history('Kiev,UA')
+
+a list of _Weather_ objects is returned.
+
 ### The Observation class
 An instance of this class is returned whenever a query about currently observed weather in a location is issued (hence, its name).
 
@@ -50,15 +56,7 @@ When using _OWM_ class for the retrieval of currently observed weather in multip
     owm.find_weather_by_name('Springfield',search='accurate')
     owm.find_weather_by_coords(-2.15, 57.0)
 
-a list of _Observation_ instances is returned to the clients while querying of weather forecasts gives
-a _Forecaster_ object:
-
-    owm.three_hours_forecast('Venice,IT')
-    owm.daily_forecast('San Francisco,US')
-
-and querying of weather history gives a list of _Weather_ objects:
-
-    owm.weather_history('Kiev,UA')
+a list of _Observation_ instances is returned to the clients.
 
 ### The Forecast class
 This class represents a weather forecast for a specific location in the world. A weather forecast is made out by location data - encapsulated by a _Location_ object - and a collection of weather conditions - a list of _Weather_ objects.
