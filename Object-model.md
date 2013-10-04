@@ -15,11 +15,14 @@ Each kind of weather query you can issue against the OWM web API is done through
     * find current weathers in all locations
       in the surroundings of specific lon/lat -------> eg: owm.find_weather_by_coords(-2.15, 57.0)
 
-    # WEATHER FORECAST  QUERYING
+    # WEATHER FORECAST QUERYING
     * find 3 hours weather forecast at a specific
       location --------------------------------------> eg: owm.three_hours_forecast('Venice,IT')
     * find daily weather forecast at a specific
       location --------------------------------------> eg: owm.daily_forecast('San Francisco,US')
+
+    # WEATHER HISTORY QUERYING
+    * find weather history for a specific location --> eg: owm.weather_history('Kiev,UA')
 
 The methods illustrated above return a single object instance (_Observation_ or _Forecast_ types) a list of instances. In all cases, it is up to the clients to handle the returned entities.
 
@@ -47,7 +50,15 @@ When using _OWM_ class for the retrieval of currently observed weather in multip
     owm.find_weather_by_name('Springfield',search='accurate')
     owm.find_weather_by_coords(-2.15, 57.0)
 
-a list of _Observation_ instances is returned to the clients.
+a list of _Observation_ instances is returned to the clients while querying of weather forecasts gives
+a _Forecaster_ object:
+
+    owm.three_hours_forecast('Venice,IT')
+    owm.daily_forecast('San Francisco,US')
+
+and querying of weather history gives a list of _Weather_ objects:
+
+    owm.weather_history('Kiev,UA')
 
 ### The Forecast class
 This class represents a weather forecast for a specific location in the world. A weather forecast is made out by location data - encapsulated by a _Location_ object - and a collection of weather conditions - a list of _Weather_ objects.
