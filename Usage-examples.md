@@ -356,7 +356,7 @@ _Forecast_ objects can be printed on-screen, eg:
     [Location: name=wonderland lon=12.3 lat=44.7 ID=9876]
 
 ### Getting meteostation measurements history
-Weather data measurements history for a specific meteostation is available in three sampling modes: _'tick'_ (which stands for minutely), _'hour'_ and _'day'_. The calls to be made are:
+Weather data measurements history for a specific meteostation is available in three sampling intervals: _'tick'_ (which stands for minutely), _'hour'_ and _'day'_. The calls to be made are:
 
     # Get tick historic data for station 39276, just get 4 data items
     >>> sh = owm.station_tick_history(39276, limit=4)
@@ -365,10 +365,60 @@ Weather data measurements history for a specific meteostation is available in th
     # Get daily historic data for station 39276
     >>> sh = owm.station_day_history(39276)
 
-and all of them return a _StationHistory_ object. As you can note, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a pressure sample, a humidity sample, a wind speed sample and a rain volume sample.
+and all of them return a _StationHistory_ object. As you can notice, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a humidity sample, a pressure sample, a rain volume sample and a wind speed sample.
 
+Once you have a _StationHistory_ instance, you can obtain the encapsulated data:
 
+    >>> sh.get_station_ID()                   # Meteostation ID
+    39276
+    >>> sh.get_interval()                     # Data sampling interval
+    'tick'
+    >>> sh.get_reception_time()               # Timestamp when data was received (GMT UNIXtime or ISO8601)
+    1377862896L
+    >>> sh.get_reception_time(timeformat="iso")
+    '2013-08-30 20:07:57+00'
+    >>> sh.get_measurements()                 # Get historic data as a dict
+    {
+        1362933983: {
+             "temperature": 266.25,
+             "humidity": 27.3,
+             "pressure": 1010.02,
+             "rain": None,
+             "wind": 4.7
+         },
+        [...]
+    }
 
+The last call gives you back a dictionary containing the historic weather data: the keys of the dictionary are the UNIX timestamps of data sampling and the values are dictionaries having a fixed set of keys (_temperature_, _humidity_, _pressure_, _rain_, _wind_) along with their corresponding numeric values.
+
+If you have no specific need to handle the raw data by yourself, you can leverage the convenience methods provided by the _StationHistory_ class:
+
+    # Get the temperature time series (in different units of measure)
+    >>> sh.temperature_series()
+    [(1381327200, 293.4), (1381327260, 293.6), (1381327320, 294.4), ...]
+    >>> sh.temperature_series(unit="celsius")
+    [(1381327200, 20.25), (1381327260, 20.45), (1381327320, 21.25), ...]
+    >>> sh.temperature_series(unit="fahrenheit")
+    [(1381327200, 68.45), (1381327260, 68.81), (1381327320, 70.25), ...]
+
+    # Get the humidity time series
+    >>> sh.humidity_series()
+    [(1381327200, 27.3), (1381327260, 27.2), (1381327320, 27.2), ...]
+
+    # Get the atmospheric pressure time series
+    >>> sh.pressure_series()
+    [(1381327200, 1010.02), (1381327260, 1010.23), (1381327320, 1010.79), ...]
+
+    # Get the rain volume time series
+    >>> sh.rain_series()
+    [(1381327200, None), (1381327260, None), (1381327320, None), ...]
+
+    # Get the wind speed time series
+    >>> sh.wind_series()
+    [(1381327200, 4.7), (1381327260, 4.7), (1381327320, 4.9), ...]
+
+Each of the ``*_series()`` methods returns a list of tuples, each tuple being a couple in the form: (timestamp, measured value). When in the series values are not provided by the OWM web API, the numeric value is ``None``.
+These convenience methods are especially useful if you need to chart the historic time series of the physical entities stored by the _StationHistory_ instances.
 
 ### Dumping objects' content to JSON and XML
 _Location_, _Weather_, _Observation_, _Forecast_ and _StationHistory_ objects can be dumped to 
