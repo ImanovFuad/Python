@@ -314,22 +314,21 @@ Weather history on a specific location can be retrieved using:
 A list of ``Weather`` objects is returned. You can can specify a time window in which you want the results to be filtered:
 
     >>> owm.weather_history('London,uk', start=1379090800L, end=1379099800L)
-    >>> owm.weather_history('London,uk', '2013-09-13 16:46:40+00',
-                            '2013-09-13 19:16:40+00')
-    >>> owm.weather_history('London,uk', datetime(2013, 9, 13, 16, 46, 40),
-                            datetime(2013, 9, 13, 19, 16, 40))
+    >>> owm.weather_history('London,uk', '2013-09-13 16:46:40+00', '2013-09-13 19:16:40+00')
+    >>> from datetime import datetime
+    >>> owm.weather_history('London,uk', datetime(2013, 9, 13, 16, 46, 40), datetime(2013, 9, 13, 19, 16, 40))
     
 The time boundaries can be expressed either as a UNIX timestamp, a _datetime.datetime_ object or an ISO8601-formatted string (format: "YYYY-MM-DD HH:MM:SS+00").
 
 ### Getting meteostation measurements history
 Weather data measurements history for a specific meteostation is available in three sampling intervals: ``'tick'`` (which stands for minutely), ``'hour'`` and ``'day'``. The calls to be made are:
 
-    # Get tick historic data for station 39276, just get 4 data items
+    # Get tick historic data for station 39276, only 4 data items
     >>> sh = owm.station_tick_history(39276, limit=4)
     # Get hourly historic data for station 39276
     >>> sh = owm.station_hour_history(39276)
-    # Get daily historic data for station 39276
-    >>> sh = owm.station_day_history(39276)
+    # Get daily historic data for station 39276, only 10 data items
+    >>> sh = owm.station_day_history(39276, 10)
 
 and all of them return a ``StationHistory`` object. As you can notice, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a humidity sample, a pressure sample, a rain volume sample and a wind speed sample.
 
@@ -341,7 +340,7 @@ Once you have a ``StationHistory`` instance, you can obtain the encapsulated dat
     'tick'
     >>> sh.get_reception_time()               # Timestamp when data was received (GMT UNIXtime or ISO8601)
     1377862896L
-    >>> sh.get_reception_time(timeformat="iso")
+    >>> sh.get_reception_time("iso")
     '2013-08-30 20:07:57+00'
     >>> sh.get_measurements()                 # Get historic data as a dict
     {
@@ -364,7 +363,7 @@ If you have no specific need to handle the raw data by yourself, you can leverag
     [(1381327200, 293.4), (1381327260, 293.6), (1381327320, 294.4), ...]
     >>> sh.temperature_series(unit="celsius")
     [(1381327200, 20.25), (1381327260, 20.45), (1381327320, 21.25), ...]
-    >>> sh.temperature_series(unit="fahrenheit")
+    >>> sh.temperature_series("fahrenheit")
     [(1381327200, 68.45), (1381327260, 68.81), (1381327320, 70.25), ...]
 
     # Get the humidity time series
