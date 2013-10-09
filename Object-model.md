@@ -85,6 +85,18 @@ A_Forecaster_ object wraps a _Forecast_ object and provides convenience methods 
 It is then possible to know when a weather forecast starts/ends, know which _Weather_ items in the forecast carry sunny/cloudy/... weather conditions, determine wether the forecast contains sunny/cloudy/... _Weather_ items or not and to obtain the closest _Weather_ item of the forecast to the time provided by the
 clients.
 
+### The StationHistory class
+Instances of this class are returned by historic weather data query for meteostations, such as:
+
+    sh = owm.station_tick_history(39276)
+    sh = owm.station_hour_history(2865, limit=3)
+    sh = owm.station_day_history(2865)
+
+A _StationHistory_ object contains information about the ID of the meteostation, the time granularity of the retrieved data ('tick','hour' or 'day' - where 'tick' represents data sampled every minute) and of course the raw data: temperature, humidity, pressure, rain and wind speed.
+
+The clients of this class can benefit from a few convenience methods which allow to obtain the time series of each of the measured physical entities: this is particularly useful for example when creating cartesian charts.
+
+
 ### Utilities functions
 
 A few packages are provided, containing utility functions that support the base PyOWM entity classes and the user:
