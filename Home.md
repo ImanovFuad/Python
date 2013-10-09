@@ -17,6 +17,9 @@ PyOWM does not require any additional library to the standard Python library mod
 ### Currently supported OWM API version
 2.5
 
+### Currently supported platforms
+Windows, Linux
+
 ### Installation
 You will need _setuptools_ installed - read [here](https://pypi.python.org/pypi/setuptools) 
 how to do it. Just run (superuser privileges might be needed):
