@@ -355,8 +355,23 @@ _Forecast_ objects can be printed on-screen, eg:
     >>> print location
     [Location: name=wonderland lon=12.3 lat=44.7 ID=9876]
 
+### Getting meteostation measurements history
+Weather data measurements history for a specific meteostation is available in three sampling modes: _'tick'_ (which stands for minutely), _'hour'_ and _'day'_. The calls to be made are:
+
+    # Get tick historic data for station 39276, just get 4 data items
+    >>> sh = owm.station_tick_history(39276, limit=4)
+    # Get hourly historic data for station 39276
+    >>> sh = owm.station_hour_history(39276)
+    # Get daily historic data for station 39276
+    >>> sh = owm.station_day_history(39276)
+
+and all of them return a _StationHistory_ object. As you can note, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a pressure sample, a humidity sample, a wind speed sample and a rain volume sample.
+
+
+
+
 ### Dumping objects' content to JSON and XML
-_Location_, _Weather_, _Observation_ and _Forecast_ objects can be dumped to 
+_Location_, _Weather_, _Observation_, _Forecast_ and _StationHistory_ objects can be dumped to 
 JSON or XML strings:
 
     # Dump a Weather object to JSON...
