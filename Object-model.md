@@ -23,6 +23,12 @@ Each kind of weather query you can issue against the OWM web API is done through
 
     # WEATHER HISTORY QUERYING
     * find weather history for a specific location --> eg: owm.weather_history('Kiev,UA')
+    * find historic minutely data measurements for a 
+      specific meteostation -------------------------> eg: owm.station_tick_history(39276)
+    * find historic hourly data measurements for a 
+      specific meteostation -------------------------> eg: owm.station_hour_history(39276)
+    * find historic daily data measurements for a 
+      specific meteostation -------------------------> eg: owm.station_day_history(39276)
 
 The methods illustrated above return a single object instance (_Observation_ or _Forecast_ types) a list of instances. In all cases, it is up to the clients to handle the returned entities.
 
