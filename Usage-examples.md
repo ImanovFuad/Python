@@ -16,12 +16,6 @@ Of course you can change your API key at a later time if you need:
     'G09_7IueS-9xN712E'
     >>> owm.set_API_key('6Lp$0UY220_HaSB45')
 
-### Printing objects' content
-For a quick reading of data, the PyOWM objects can be printed on-screen, eg:
-
-    >>> print location
-    [Location: name=wonderland lon=12.3 lat=44.7 ID=9876]
-
 ### Getting currently observed weather for a specific location.
 Querying for current weather is simple: provide an ``OWM`` object with the location you want the current weather be looked up for and the job is done. You can specify the location either by passing its toponym (eg: "London") or its geographic coordinates (lon/lat):
 
