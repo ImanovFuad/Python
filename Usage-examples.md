@@ -16,6 +16,14 @@ Of course you can change your API key at a later time if you need:
     'G09_7IueS-9xN712E'
     >>> owm.set_API_key('6Lp$0UY220_HaSB45')
 
+You can obtain the OWM global object related to a specific OWM web API version,
+just specify it after the API key parameter(check before that the version is supported!):
+
+    >>> owm = OWM(API_key, '2.5')
+
+If you don't specify an API version number, you'll be provided with the OWM
+object that represents the latest available OWM web API version.
+
 ### Getting currently observed weather for a specific location.
 Querying for current weather is simple: provide an ``OWM`` object with the location you want the current weather be looked up for and the job is done. You can specify the location either by passing its toponym (eg: "London") or its geographic coordinates (lon/lat):
 
