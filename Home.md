@@ -9,7 +9,7 @@ PyOWM is released under the [MIT](https://github.com/csparpa/pyowm/blob/master/L
 PyOWM does not require any additional library to the standard Python library modules.
 
 ### Current PyOWM version
-0.1
+0.1.1
 
 ### Currently supported Python versions
 2.6, 2.7
@@ -29,18 +29,18 @@ how to do it. Just run (superuser privileges might be needed):
 and you'll be done.
 
 ### Test the codebase
-*Unit tests* can be launched by moving into the library installation folder and 
-executing:
-
-    python -m unittest discover
-    
-*Integration tests* can be launched by moving into the library installation folder
+The full test battery can be issued by moving into the library installation folder
 and executing:
 
-    cd functional-tests
-    python integration-tests.py  
+    python setup.py test
 
-Integration testing needs network connectivity in order to reach the real OWM web API.
+The integration tests battery can be launched by moving into the library installation folder
+and executing:
+
+    cd tests/functional
+    python -m unittest discover  
+
+Integration testing needs time and a network connectivity in order to reach the real OWM web API.
 
 ### API documentation
 The library API documentation is available on [Read the Docs](https://pyowm.readthedocs.org).
