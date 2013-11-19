@@ -1,11 +1,19 @@
 In the following sections you will find a brief explanation of PyOWM's object model, with detail about the classes and datastructures of interest. For a detailed description of the classes, please refer to the [SW API documentation](https://pyowm.readthedocs.org/).
 
-### The OWM class
-The _OWM_ class acts as the main library entry-point.
+# The OWM class abstraction
+The _OWM_ class is an abstract entry-point to the library. Clients can obtain a concrete implementation of this class through a factory method that returns the _OWM_ subclass instance corresponding to the OWM web API version that is specified (or to the latest OWM web API version available).
 
-In order to leverage the library features, you need to import the _OWM_ class and then feed it with an API key, if you have one (read [here](http://openweathermap.org/appid) on how to obtain an API key). Of course you can change your API Key after object instantiation, if you need.
+In order to leverage the library features, you need to import the OWM factory and then feed it with an API key, if you have one (read [here](http://openweathermap.org/appid) on how to obtain an API key). Of course you can change your API Key after object instantiation, if you need.
 
-Each kind of weather query you can issue against the OWM web API is done through a correspondent method invocation on your _OWM_ object instance:
+Each kind of weather query you can issue against the OWM web API is done through a correspondent method invocation on your _OWM_ object instance.
+
+Each OWM web API version may have different features, and therefore the mapping _OWM_ subclass may have different methods. The _OWM_ common parent class provides methods that tells you the PyOWM library version and the supported OWM web API version: these methods are inherited by all the _OWM_ children classes.
+
+# OWM web API 2.5 object model
+
+### The OWM25 class
+
+The _OWM25_ class extends the _OWM_ abstract base class and provides a method for each of the OWM web API 2.5 endpoint:
 
     # CURRENT WEATHER QUERYING
     * find current weather at a specific location ---> eg: owm.weather_at('London,UK')
@@ -32,10 +40,8 @@ Each kind of weather query you can issue against the OWM web API is done through
 
 The methods illustrated above return a single object instance (_Observation_ or _Forecast_ types) a list of instances. In all cases, it is up to the clients to handle the returned entities.
 
-This class also tells you the PyOWM library version and the currently supported OWM web API version.
-
 ### The Location class
-The _Location_ class represents a location in the world. Each instance stores the geographic name of the location, the longitude/latitude couple and the country name. These data are retrieved from the OWM web API responses' payloads.
+The _Location_ class represents a location in the world. Each instance stores the geographic name of the location, the longitude/latitude couple and the country name. These data are retrieved from the OWM web API 2.5 responses' payloads.
 
 ### The Weather class
 This class is a databox containing information about weather conditions in a place. Stored data include text information such as weather status (sunny/rainy/snowy/...) and numeric information such as the values of measured phyisical entities (mx/min/current temperatures, wind speed/orientation, humidity, pressure, cloud coverage, ...). 
@@ -44,7 +50,7 @@ Some types of data are grouped and stored into Python dictionaries, such as weat
 
 This class also stores the reference timestamp for the weather data, that is to say the time when the data was measured.
 
-When using _OWM_ class for the retrieval of weather history on a location, eg:
+When using _OWM25_ class for the retrieval of weather history on a location, eg:
 
     owm.weather_history('Kiev,UA')
 
@@ -57,7 +63,7 @@ The _Observation_ class binds information about weather features that are curren
 
 When created, every _Observation_ instance is fed with a timestamp that tells when the weather observation data have been received.
 
-When using _OWM_ class for the retrieval of currently observed weather in multiple locations, eg:
+When using _OWM25_ class for the retrieval of currently observed weather in multiple locations, eg:
 
     owm.find_weather_by_name('Springfield',search='accurate')
     owm.find_weather_by_coords(-2.15, 57.0)
@@ -67,7 +73,7 @@ a list of _Observation_ instances is returned to the clients.
 ### The Forecast class
 This class represents a weather forecast for a specific location in the world. A weather forecast is made out by location data - encapsulated by a _Location_ object - and a collection of weather conditions - a list of _Weather_ objects.
 
-The OWM web API provides two types of forecast intervals: three hours and daily; each _Forecast_ instance has a specific fields that tells the interval of the forecast. 
+The OWM web API 2.5 provides two types of forecast intervals: three hours and daily; each _Forecast_ instance has a specific fields that tells the interval of the forecast. 
 
 _Forecast_ instances can also tell the reception timestamp for the weather forecast, that is to say the time when the forecast has been recevied from the OWM web API.
 
@@ -103,7 +109,7 @@ A _StationHistory_ object contains information about the ID of the meteostation,
 The clients of this class can benefit from a few convenience methods which allow to obtain the time series of each of the measured physical entities: this is particularly useful for example when creating cartesian charts.
 
 
-### Utilities functions
+# Utilities functions
 
 A few packages are provided, containing utility functions that support the base PyOWM entity classes and the user:
 
@@ -114,7 +120,7 @@ A few packages are provided, containing utility functions that support the base 
 + **weather utils**: searching and filtering collections of _Weather_ objects
 + **XML utls**: dump data to XML 
 
-### Exception classes
+# Exception classes
 
 + **APICallError** class: raises when failures in OWM web API invocation occur
 + **APIResponseError** class: raised when HTTP error status codes occur in OWM web API responses
