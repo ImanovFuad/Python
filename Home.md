@@ -46,4 +46,4 @@ Integration testing needs time and a network connectivity in order to reach the 
 The library API documentation is available on [Read the Docs](https://pyowm.readthedocs.org).
 
 ### Usage examples
-Usage examples are available [here](https://github.com/csparpa/pyowm/blob/master/docs/usage-examples.md).
+Usage examples are available [on the wiki page](https://github.com/csparpa/pyowm/wiki/Usage-examples).
