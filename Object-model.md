@@ -1,6 +1,10 @@
 In the following sections you will find a brief explanation of PyOWM's object model, with detail about the classes and datastructures of interest. For a detailed description of the classes, please refer to the [SW API documentation](https://pyowm.readthedocs.org/).
 
-# The OWM class abstraction
+# Abstractions
+
+A few abstract classes are provided in order to allow code reuse for supporting new OWM web API versions and to eventually patch the currently supported ones.
+
+### The OWM abstract class
 The _OWM_ class is an abstract entry-point to the library. Clients can obtain a concrete implementation of this class through a factory method that returns the _OWM_ subclass instance corresponding to the OWM web API version that is specified (or to the latest OWM web API version available).
 
 In order to leverage the library features, you need to import the OWM factory and then feed it with an API key, if you have one (read [here](http://openweathermap.org/appid) on how to obtain an API key). Of course you can change your API Key after object instantiation, if you need.
@@ -9,7 +13,21 @@ Each kind of weather query you can issue against the OWM web API is done through
 
 Each OWM web API version may have different features, and therefore the mapping _OWM_ subclass may have different methods. The _OWM_ common parent class provides methods that tells you the PyOWM library version and the supported OWM web API version: these methods are inherited by all the _OWM_ children classes.
 
+### The JSONParser abstract class
+
+This abstract class states the interface for OWM web API responses' JSON parsing: every API endpoint returns a different JSON message that has to be parsed to a specific object from the PyOWM object model.
+Subclasses of _JSONParser_ shall implement this contract: instances of these classes shall be used by subclasses of the _OWM_ abstract class.
+
+
 # OWM web API 2.5 object model
+
+### The configuration25 module
+
+This module contains configuration data for the OWM web API 2.5 object model. Specifically:
+
+    * OWM web API endpoint URLs
+    * parser objects for API JSON payloads parsing
+    * misc data
 
 ### The OWM25 class
 
@@ -39,6 +57,10 @@ The _OWM25_ class extends the _OWM_ abstract base class and provides a method fo
       specific meteostation -------------------------> eg: owm.station_day_history(39276)
 
 The methods illustrated above return a single object instance (_Observation_ or _Forecast_ types) a list of instances. In all cases, it is up to the clients to handle the returned entities.
+
+The _OWM25_ class is injected with _jsonparser_ subclasses instances: each one parses a JSON response coming from a specific API endpoint and creates the objects returned to the clients. These dependencies are configured into the _configuration25_ module and injected into this class.
+
+In order to interact with the web API, this class leverages an _OWMHTTPClient_ instance.
 
 ### The Location class
 The _Location_ class represents a location in the world. Each instance stores the geographic name of the location, the longitude/latitude couple and the country name. These data are retrieved from the OWM web API 2.5 responses' payloads.
@@ -108,19 +130,25 @@ A _StationHistory_ object contains information about the ID of the meteostation,
 
 The clients of this class can benefit from a few convenience methods which allow to obtain the time series of each of the measured physical entities: this is particularly useful for example when creating cartesian charts.
 
+### The weatherutils module
+This utility module provides functions for searching and filtering collections of _Weather_ objects.
 
-# Utilities functions
+# Commons
+A few common classes are provided to be used by all codes supporting different OWM web API versions.
+
+### The OWMHTTPClient class
+
+This class is used to issue HTTP requests to the OWM web API endpoints.
+
+# Utilities
 
 A few packages are provided, containing utility functions that support the base PyOWM entity classes and the user:
 
 + **conversion utils**: conversions between temperature units and timeformats
-+ **HTTP utils**: network communications with the OWM web API
-+ **JSON parsing utils**: parsing of OWM web API JSON responses and objects creation
 + **time utils**: convenience time functions for library users
-+ **weather utils**: searching and filtering collections of _Weather_ objects
 + **XML utls**: dump data to XML 
 
-# Exception classes
+# Exceptions
 
 + **APICallError** class: raises when failures in OWM web API invocation occur
 + **APIResponseError** class: raised when HTTP error status codes occur in OWM web API responses
