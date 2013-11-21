@@ -114,7 +114,7 @@ Instances of this class are returned by weather forecast queries such as:
     f = owm.three_hours_forecast('London')
     f = owm.daily_forecast('Buenos Aires',limit=6)
 
-A_Forecaster_ object wraps a _Forecast_ object and provides convenience methods that makes it possible to perform complex weather forecast data queries, which could not otherwise be possible using only the _Forecast_ class interface. A central concept with this regard is the "time coverage" of the forecast, that is to say the temporal length of the forecast.
+A _Forecaster_ object wraps a _Forecast_ object and provides convenience methods that makes it possible to perform complex weather forecast data queries, which could not otherwise be possible using only the _Forecast_ class interface. A central concept with this regard is the "time coverage" of the forecast, that is to say the temporal length of the forecast.
 
 It is then possible to know when a weather forecast starts/ends, know which _Weather_ items in the forecast carry sunny/cloudy/... weather conditions, determine wether the forecast contains sunny/cloudy/... _Weather_ items or not and to obtain the closest _Weather_ item of the forecast to the time provided by the
 clients.
@@ -128,7 +128,14 @@ Instances of this class are returned by historic weather data query for meteosta
 
 A _StationHistory_ object contains information about the ID of the meteostation, the time granularity of the retrieved data ('tick','hour' or 'day' - where 'tick' represents data sampled every minute) and of course the raw data: temperature, humidity, pressure, rain and wind speed.
 
-The clients of this class can benefit from a few convenience methods which allow to obtain the time series of each of the measured physical entities: this is particularly useful for example when creating cartesian charts.
+### The Historian class
+This convenience class is dual to Forecaster.
+Instances of this class are returned by meteostation weather history queries such as:
+
+    h = owm.station_hour_history(39276)
+    h = owm.station_tick_history(39276)
+
+A _Historian _ object wraps a _StationHistory_ object and provides convenience methods that make it possible, in example, to obtain the time series of each of the measured physical entities: this is particularly useful for example when creating cartesian charts.
 
 ### The weatherutils module
 This utility module provides functions for searching and filtering collections of _Weather_ objects.
