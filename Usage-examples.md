@@ -1,9 +1,9 @@
-### Import the PyOWM library
+# Import the PyOWM library
 As simple as:
 
     >>> from pyowm import OWM
 
-### Create global OWM object
+# Create global OWM object
 Use your OWM API key if you have one (read [here](http://openweathermap.org/appid) 
 on how to obtain an API key).
 
@@ -23,6 +23,8 @@ just specify it after the API key parameter(check before that the version is sup
 
 If you don't specify an API version number, you'll be provided with the OWM
 object that represents the latest available OWM web API version.
+
+# OWM web API version 2.5 usage examples
 
 ### Getting currently observed weather for a specific location.
 Querying for current weather is simple: provide an ``OWM`` object with the location you want the current weather be looked up for and the job is done. You can specify the location either by passing its toponym (eg: "London") or its geographic coordinates (lon/lat):
