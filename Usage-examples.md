@@ -328,15 +328,19 @@ The time boundaries can be expressed either as a UNIX timestamp, a _datetime.dat
 Weather data measurements history for a specific meteostation is available in three sampling intervals: ``'tick'`` (which stands for minutely), ``'hour'`` and ``'day'``. The calls to be made are:
 
     # Get tick historic data for station 39276, only 4 data items
-    >>> sh = owm.station_tick_history(39276, limit=4)
+    >>> hist = owm.station_tick_history(39276, limit=4)
     # Get hourly historic data for station 39276
-    >>> sh = owm.station_hour_history(39276)
+    >>> hist = owm.station_hour_history(39276)
     # Get daily historic data for station 39276, only 10 data items
-    >>> sh = owm.station_day_history(39276, 10)
+    >>> hist = owm.station_day_history(39276, 10)
 
-and all of them return a ``StationHistory`` object. As you can notice, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a humidity sample, a pressure sample, a rain volume sample and a wind speed sample.
+and all of them return a ``Historian`` object. As you can notice, the amount of data measurements returned can be limited usign the proper parameter: by default, all available data items are retrieved. Each data item is composed by a temperature sample, a humidity sample, a pressure sample, a rain volume sample and a wind speed sample.
 
-Once you have a ``StationHistory`` instance, you can obtain the encapsulated data:
+Once you have a ``Historian`` instance, you can obtain its encapsulated ``StationHistory`` object, which is a databox containing the data:
+
+    >>> sh = his.get_station_history()
+
+and query data directly on it:
 
     >>> sh.get_station_ID()                   # Meteostation ID
     39276
@@ -360,33 +364,33 @@ Once you have a ``StationHistory`` instance, you can obtain the encapsulated dat
 
 The last call gives you back a dictionary containing the historic weather data: the keys of the dictionary are the UNIX timestamps of data sampling and the values are dictionaries having a fixed set of keys (_temperature_, _humidity_, _pressure_, _rain_, _wind_) along with their corresponding numeric values.
 
-If you have no specific need to handle the raw data by yourself, you can leverage the convenience methods provided by the ``StationHistory`` class:
+If you have no specific need to handle the raw data by yourself, you can leverage the convenience methods provided by the ``Historian`` class:
 
     # Get the temperature time series (in different units of measure)
-    >>> sh.temperature_series()
+    >>> his.temperature_series()
     [(1381327200, 293.4), (1381327260, 293.6), (1381327320, 294.4), ...]
-    >>> sh.temperature_series(unit="celsius")
+    >>> his.temperature_series(unit="celsius")
     [(1381327200, 20.25), (1381327260, 20.45), (1381327320, 21.25), ...]
-    >>> sh.temperature_series("fahrenheit")
+    >>> his.temperature_series("fahrenheit")
     [(1381327200, 68.45), (1381327260, 68.81), (1381327320, 70.25), ...]
 
     # Get the humidity time series
-    >>> sh.humidity_series()
+    >>> his.humidity_series()
     [(1381327200, 27.3), (1381327260, 27.2), (1381327320, 27.2), ...]
 
     # Get the atmospheric pressure time series
-    >>> sh.pressure_series()
+    >>> his.pressure_series()
     [(1381327200, 1010.02), (1381327260, 1010.23), (1381327320, 1010.79), ...]
 
     # Get the rain volume time series
-    >>> sh.rain_series()
+    >>> his.rain_series()
     [(1381327200, None), (1381327260, None), (1381327320, None), ...]
 
     # Get the wind speed time series
-    >>> sh.wind_series()
+    >>> his.wind_series()
     [(1381327200, 4.7), (1381327260, 4.7), (1381327320, 4.9), ...]
 
-Each of the ``*_series()`` methods returns a list of tuples, each tuple being a couple in the form: (timestamp, measured value). When in the series values are not provided by the OWM web API, the numeric value is ``None``. These convenience methods are especially useful if you need to chart the historic time series of the physical entities stored by the ``StationHistory`` instances.
+Each of the ``*_series()`` methods returns a list of tuples, each tuple being a couple in the form: (timestamp, measured value). When in the series values are not provided by the OWM web API, the numeric value is ``None``. These convenience methods are especially useful if you need to chart the historic time series of the measured physical entities.
 
 ### Dumping objects' content to JSON and XML
 The PyOWM object instances can be dumped to JSON or XML strings:
