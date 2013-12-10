@@ -26,6 +26,17 @@ object that represents the latest available OWM web API version.
 
 # OWM web API version 2.5 usage examples
 
+### Setting a local cache provider
+The PyOWM library comes with a built-in support for local caches: OWM web API reponses can be cached in order to save time and bandwidth. The default configuration uses no cache, however the library contains a built-in simple LRU cache implementation that can be plugged in by changing the ``configuration25.py`` module and specifying a ``LRUCache`` class instance:
+
+    ...
+    # Cache provider to be used
+    from pyowm.caches.lrucache import LRUCache
+    cache = LRUCache()
+    ...
+
+By using the ``configuration25.py`` module, it is also possible to leverage external cache providers  module, provided that they implement the interface that is expected by the library code.
+
 ### Getting currently observed weather for a specific location.
 Querying for current weather is simple: provide an ``OWM`` object with the location you want the current weather be looked up for and the job is done. You can specify the location either by passing its toponym (eg: "London") or its geographic coordinates (lon/lat):
 
