@@ -14,7 +14,6 @@ Each kind of weather query you can issue against the OWM web API is done through
 Each OWM web API version may have different features, and therefore the mapping _OWM_ subclass may have different methods. The _OWM_ common parent class provides methods that tells you the PyOWM library version and the supported OWM web API version: these methods are inherited by all the _OWM_ children classes.
 
 ### The JSONParser abstract class
-
 This abstract class states the interface for OWM web API responses' JSON parsing: every API endpoint returns a different JSON message that has to be parsed to a specific object from the PyOWM object model.
 Subclasses of _JSONParser_ shall implement this contract: instances of these classes shall be used by subclasses of the _OWM_ abstract class.
 
@@ -27,7 +26,6 @@ This abstract class models a generic linked list data structure.
 # OWM web API 2.5 object model
 
 ### The configuration25 module
-
 This module contains configuration data for the OWM web API 2.5 object model. Specifically:
 
     * OWM web API endpoint URLs
@@ -41,7 +39,6 @@ As regards cache providers:
 * you can leverage 3rd-party caching systems (eg: Memcached, MongoDB, Redis, file-system caches, etc..): all you have to do is write/obtain a wrapper module for those systems which conforms to the interface stated into the ``abstractions.owmcache`` abstract class.
 
 ### The OWM25 class
-
 The _OWM25_ class extends the _OWM_ abstract base class and provides a method for each of the OWM web API 2.5 endpoint:
 
     # CURRENT WEATHER QUERYING
@@ -155,11 +152,9 @@ This utility module provides functions for searching and filtering collections o
 Collection of caches
 
 ### The NullCache class
-
 This is a null-object that does nothing and is used by default as the PyOWM library caching mechanism
 
 ### The LRUCache class
-
 This is a Least-Recently Used simple cache with configurable size and elements expiration time.
 
 # Commons
@@ -174,7 +169,6 @@ This class is used to issue HTTP requests to the OWM web API endpoints.
 This class realizes a linked list that performs insertions only at the front of the list (time: O(1)) and deletions at any of its places (time: O(n))
 
 # Utilities
-
 A few packages are provided, containing utility functions that support the base PyOWM entity classes and the user:
 
 + **conversion utils**: conversions between temperature units and timeformats
@@ -182,7 +176,6 @@ A few packages are provided, containing utility functions that support the base 
 + **XML utls**: dump data to XML 
 
 # Exceptions
-
 + **APICallError** class: raises when failures in OWM web API invocation occur
 + **APIResponseError** class: raised when HTTP error status codes occur in OWM web API responses
 + **NotFoundError** class: raised when a search for an item in a collection has no result
