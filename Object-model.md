@@ -18,6 +18,11 @@ Each OWM web API version may have different features, and therefore the mapping 
 This abstract class states the interface for OWM web API responses' JSON parsing: every API endpoint returns a different JSON message that has to be parsed to a specific object from the PyOWM object model.
 Subclasses of _JSONParser_ shall implement this contract: instances of these classes shall be used by subclasses of the _OWM_ abstract class.
 
+### The OWMCache abstract class
+This abstract class states the interface for OWM web API responses' cache. The target of subclasses is to implement the get/set methods so that the JSON payloads of OWM web API responses are cached and looked up using the correspondent HTTP full URL that originated them.
+
+### The LinkedList abstract class
+This abstract class models a generic linked list data structure.
 
 # OWM web API 2.5 object model
 
@@ -27,7 +32,13 @@ This module contains configuration data for the OWM web API 2.5 object model. Sp
 
     * OWM web API endpoint URLs
     * parser objects for API JSON payloads parsing
+    * cache providers
     * misc data
+
+As regards cache providers:
+* by default, the library doesn't use any cache (it uses a null-object cache instance)
+* the library provides a basic LRU cache implementation (class ``LRUCache`` in module ``caches.lrucache.py``)
+* you can leverage 3rd-party caching systems (eg: Memcached, MongoDB, Redis, file-system caches, etc..): all you have to do is write/obtain a wrapper module for those systems which conforms to the interface stated into the ``abstractions.owmcache`` abstract class.
 
 ### The OWM25 class
 
@@ -140,12 +151,27 @@ A _Historian _ object wraps a _StationHistory_ object and provides convenience m
 ### The weatherutils module
 This utility module provides functions for searching and filtering collections of _Weather_ objects.
 
+# Caches
+Collection of caches
+
+### The NullCache class
+
+This is a null-object that does nothing and is used by default as the PyOWM library caching mechanism
+
+### The LRUCache class
+
+This is a Least-Recently Used simple cache with configurable size and elements expiration time.
+
 # Commons
 A few common classes are provided to be used by all codes supporting different OWM web API versions.
 
 ### The OWMHTTPClient class
 
 This class is used to issue HTTP requests to the OWM web API endpoints.
+
+### The FrontLinkedList class
+
+This class realizes a linked list that performs insertions only at the front of the list (time: O(1)) and deletions at any of its places (time: O(n))
 
 # Utilities
 
