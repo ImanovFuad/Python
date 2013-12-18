@@ -416,3 +416,11 @@ The PyOWM object instances can be dumped to JSON or XML strings:
     <weather><referenceTime>1377851530</referenceTime>
     <Location><name>Palermo</name><coordinates><lon>13.35976</lon><lat>38.115822</lat>
     </coordinates><ID>2523920</ID></Location>...</weather>
+
+### Printing objects
+Most of PyOWM objects can be pretty-printed for a quick introspection:
+
+    >>> print w
+    <pyowm.webapi25.weather.Weather - reference time=2013-12-18 16:41:00, status=Drizzle>
+    >>> print w.get_location()
+    <pyowm.webapi25.location.Location - ID=1234, name=Barcelona, lon=2.9, lat=41.23>
