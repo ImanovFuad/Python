@@ -17,7 +17,7 @@ PyOWM does not require any additional library to the standard Python library mod
 2.5
 
 ### Currently supported platforms
-Windows, Linux
+Windows, Linux, MacOS X
 
 ### Installation
 There are many ways to install.
