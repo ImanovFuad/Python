@@ -11,7 +11,7 @@ In order to leverage the library features, you need to import the OWM factory an
 
 Each kind of weather query you can issue against the OWM web API is done through a correspondent method invocation on your _OWM_ object instance.
 
-Each OWM web API version may have different features, and therefore the mapping _OWM_ subclass may have different methods. The _OWM_ common parent class provides methods that tells you the PyOWM library version and the supported OWM web API version: these methods are inherited by all the _OWM_ children classes.
+Each OWM web API version may have different features, and therefore the mapping _OWM_ subclass may have different methods. The _OWM_ common parent class provides methods that tells you the PyOWM library version, the supported OWM web API version and the availability of the web API service: these methods are inherited by all the _OWM_ children classes.
 
 ### The JSONParser abstract class
 This abstract class states the interface for OWM web API responses' JSON parsing: every API endpoint returns a different JSON message that has to be parsed to a specific object from the PyOWM object model.
