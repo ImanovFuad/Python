@@ -417,6 +417,12 @@ The PyOWM object instances can be dumped to JSON or XML strings:
     <Location><name>Palermo</name><coordinates><lon>13.35976</lon><lat>38.115822</lat>
     </coordinates><ID>2523920</ID></Location>...</weather>
 
+### Checking if OWM web API is online
+You can check out the OWM web API service availability:
+
+    >>> owm.API_online()
+    True
+
 ### Printing objects
 Most of PyOWM objects can be pretty-printed for a quick introspection:
 
