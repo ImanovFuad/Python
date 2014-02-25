@@ -413,6 +413,7 @@ The PyOWM object instances can be dumped to JSON or XML strings:
     
     #... and to XML
     >>> w.to_XML()
+    <?xml version='1.0' encoding='utf8'?>
     <weather><referenceTime>1377851530</referenceTime>
     <Location><name>Palermo</name><coordinates><lon>13.35976</lon><lat>38.115822</lat>
     </coordinates><ID>2523920</ID></Location>...</weather>
