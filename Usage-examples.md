@@ -414,9 +414,12 @@ The PyOWM object instances can be dumped to JSON or XML strings:
     #... and to XML
     >>> w.to_XML()
     <?xml version='1.0' encoding='utf8'?>
-    <weather><referenceTime>1377851530</referenceTime>
-    <Location><name>Palermo</name><coordinates><lon>13.35976</lon><lat>38.115822</lat>
-    </coordinates><ID>2523920</ID></Location>...</weather>
+    <weather xmlns:w="http://github.com/csparpa/pyowm/tree/master/pyowm/webapi25/xsd/weather.xsd">
+    <w:status>Clouds</w:status>[...]</weather>
+
+When you dump to XML you can decide wether or not to print the standard XML encoding declaration line and XML Name Schema prefixes using the relative switches:
+
+    >>> w.to_XML(xml_declaration=True, xmlns=False)
 
 ### Checking if OWM web API is online
 You can check out the OWM web API service availability:
