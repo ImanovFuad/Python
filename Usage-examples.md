@@ -24,6 +24,13 @@ just specify it after the API key parameter(check before that the version is sup
 If you don't specify an API version number, you'll be provided with the OWM
 object that represents the latest available OWM web API version.
 
+Advanced users might want to inject into the library a specific configuration: this can be done by injecting the Python path of your personal configuration module as a string into the library instantiation call like this:
+
+    >>> owm = OWM(API_key, '2.5', 'mypackage.mysubpackage.myconfigmodule')
+
+Be careful! You must provide a well-formatted configuration module for the library to work properly and your module must be in your PYTHONPATH. More on configuration modules formatting can be found [here](https://github.com/csparpa/pyowm/wiki/Object-model#wiki-the-configuration25-module).
+
+
 # OWM web API version 2.5 usage examples
 
 ### Setting a local cache provider
