@@ -2,4 +2,6 @@ If you want to leverage external cache systems in combination with PyOWM, it is 
 
 For your convenience, you can find drafts for a few adapters in the [pyowm-cache-adapters GitHub repo](https://github.com/csparpa/pyowm-cache-adapters).
 
-An example on how to write and wire a custom adapter is described in details [here](http://claudiosparpaglione.wordpress.com/2013/12/13/how-to-use-memcached-with-pyowm/).
+Adapters can be injected directly via an external configuration module - read how in [the usage examples relevant section](https://github.com/csparpa/pyowm/wiki/Usage-examples#wiki-create-global-owm-object) 
+
+An more detailed example on how to write and wire a custom adapter into the PyOWM library's code is described [here](http://claudiosparpaglione.wordpress.com/2013/12/13/how-to-use-memcached-with-pyowm/).
