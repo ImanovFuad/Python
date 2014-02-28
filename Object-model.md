@@ -38,6 +38,8 @@ As regards cache providers:
 * the library provides a basic LRU cache implementation (class ``LRUCache`` in module ``caches.lrucache.py``)
 * you can leverage 3rd-party caching systems (eg: Memcached, MongoDB, Redis, file-system caches, etc..): all you have to do is write/obtain a wrapper module for those systems which conforms to the interface stated into the ``abstractions.owmcache`` abstract class.
 
+You can write down your own configuration module and inject it into the PyOWM when you create the OWM global object, provided that you strictly follow the format of the `config25` module - which can be seen from the source code - and you put your own module in a location visible by the PYTHONPATH.
+
 ### The OWM25 class
 The _OWM25_ class extends the _OWM_ abstract base class and provides a method for each of the OWM web API 2.5 endpoint:
 
