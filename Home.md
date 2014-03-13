@@ -11,7 +11,7 @@ PyOWM does not require any additional library to the standard Python library mod
 1.0.0
 
 ### Currently supported Python versions
-2.6, 2.7
+2.6, 2.7, 3.3
 
 ### Currently supported OWM API versions
 2.5
