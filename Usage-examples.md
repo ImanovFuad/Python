@@ -16,17 +16,22 @@ Of course you can change your API key at a later time if you need:
     'G09_7IueS-9xN712E'
     >>> owm.set_API_key('6Lp$0UY220_HaSB45')
 
+The same happens with the language: you can speficy in which language the OWM web API will return textual data of weather queries. Language is specified by passing its corresponding two-characters string, eg: ``es``, ``sk``, etc. The default language is English (``en``):
+
+    >>> owm_en = OWM()              # default language is English
+    >>> owm_ru = OWM(language='ru') # Russian
+
 You can obtain the OWM global object related to a specific OWM web API version,
 just specify it after the API key parameter(check before that the version is supported!):
 
-    >>> owm = OWM(API_key, '2.5')
+    >>> owm = OWM(API_key='abcdef', version='2.5')
 
 If you don't specify an API version number, you'll be provided with the OWM
 object that represents the latest available OWM web API version.
 
 Advanced users might want to inject into the library a specific configuration: this can be done by injecting the Python path of your personal configuration module as a string into the library instantiation call like this:
 
-    >>> owm = OWM(API_key, '2.5', 'mypackage.mysubpackage.myconfigmodule')
+    >>> owm = OWM(API_key='abcdef', version='2.5', config_module='mypackage.mysubpackage.myconfigmodule')
 
 Be careful! You must provide a well-formatted configuration module for the library to work properly and your module must be in your PYTHONPATH. More on configuration modules formatting can be found [here](https://github.com/csparpa/pyowm/wiki/Object-model#wiki-the-configuration25-module).
 
