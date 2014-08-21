@@ -415,6 +415,21 @@ If you have no specific need to handle the raw data by yourself, you can leverag
 
 Each of the ``*_series()`` methods returns a list of tuples, each tuple being a couple in the form: (timestamp, measured value). When in the series values are not provided by the OWM web API, the numeric value is ``None``. These convenience methods are especially useful if you need to chart the historic time series of the measured physical entities.
 
+You can also get minimum, maximum and average values of each series:
+
+    # Get the minimum temperature value in the series
+    >>> his.min_temperature(unit="celsius")
+    (1381327200, 20.25)
+
+    # Get the maximum rain value in the series
+    >>> his.max_rain()
+    ()
+
+    # Get the average wind value in the series
+    >>> his.average_wind()
+    4.816
+    
+
 ### Dumping objects' content to JSON and XML
 The PyOWM object instances can be dumped to JSON or XML strings:
 
