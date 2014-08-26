@@ -58,10 +58,14 @@ Querying for current weather is simple: provide an ``OWM`` object with the locat
 
 An ``Observation`` object will be returned, containing weather info about the location matching the toponym/ID/coordinates you provided. Be precise when specifying locations!
 
-City IDs can be retrieved using a registry module named ``CityIDRegistry``:
+### Retrieving city ID for a location
+City IDs can be retrieved using a registry:
 
-    from pyowm.webapi25.cityidregistry import CityIDRegistry
-    CityIDRegistry.id_for("New York,US")                       # Gives: 5128581
+    registry = owm.city_id_registry()
+    registry.id_for("New York,US")        # Gives: 5128581
+    registry.location_for("New York,US")  # Gives a Location object instance
+
+You can pass the retrieved IDs with ``owm.weather_at_id`` method.
 
 ### Currently observed weather extended search
 You can query for currently observed weather:
