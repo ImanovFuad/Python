@@ -61,6 +61,7 @@ The _OWM25_ class extends the _OWM_ abstract base class and provides a method fo
 
     # WEATHER HISTORY QUERYING
     * find weather history for a specific location --> eg: owm.weather_history_at_place('Kiev,UA')
+    * find weather history for a specific city id  --> eg: owm.weather_history_at_id(12345)
     * find historic minutely data measurements for a 
       specific meteostation -------------------------> eg: owm.station_tick_history(39276)
     * find historic hourly data measurements for a 
