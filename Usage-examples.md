@@ -52,7 +52,7 @@ By using the ``configuration25.py`` module, it is also possible to leverage exte
 ### Getting currently observed weather for a specific location.
 Querying for current weather is simple: provide an ``OWM`` object with the location you want the current weather be looked up for and the job is done. You can specify the location either by passing its toponym (eg: "London"), the city ID (eg: 2643741) or its geographic coordinates (lon/lat):
 
-    obs = owm.weather_at('London,uk')                          # Toponym
+    obs = owm.weather_at_place('London,uk')                          # Toponym
     obs = owm.weather_at_id(2643741)                           # City ID
     obs = owm.weather_at_coords(-0.107331,51.503614)           # Lon/lat
 
@@ -79,19 +79,19 @@ In all cases, a list of ``Observation`` objects is returned, each one describing
 Examples:
 
     # Find observed weather in all the "London"s in the world
-    obs_list = owm.find_weather_by_name('London', 'accurate')
+    obs_list = owm.weather_at_places('London', 'accurate')
     # As above but limit result items to 3
-    obs_list = owm.find_weather_by_name('London',searchtype='accurate',limit=3)
+    obs_list = owm.weather_at_places('London',searchtype='accurate',limit=3)
     
     # Find observed weather for all the places whose name contains the word "London"
-    obs_list = owm.find_weather_by_name('London', 'like')
+    obs_list = owm.weather_at_places('London', 'like')
     # As above but limit result items to 5
-    obs_list = owm.find_weather_by_name('London',searchtype='like', 5)
+    obs_list = owm.weather_at_places('London',searchtype='like', 5)
     
     # Find observed weather for all the places in the surroundings of lon=-2.15,lat=57
-    obs_list = owm.find_weather_by_coords(-2.15, 57)
+    obs_list = owm.weather_around_coords(-2.15, 57)
     # As above but limit result items to 8
-    obs_list = owm.find_weather_by_coords(-2.15, 57, limit=8)
+    obs_list = owm.weather_around_coords(-2.15, 57, limit=8)
 
 ### Getting data from Observation objects
 ``Observation`` objects store two useful objects: a ``Weather`` object that contains the weather-related data and a ``Location`` object that describes the location the weather data is provided for.
@@ -345,15 +345,15 @@ When calling the ``when_*()``  methods you will be provided with a sublist of th
 ### Getting weather history on a location
 Weather history on a specific location can be retrieved using:
 
-    >>> owm.weather_history('London,uk')
+    >>> owm.weather_history_at_place('London,uk')
     [ <weather.Weather at 0x00BF81A2>, <weather.Weather at 0x00BF81C8>, ... ]
 
 A list of ``Weather`` objects is returned. You can can specify a time window in which you want the results to be filtered:
 
-    >>> owm.weather_history('London,uk', start=1379090800L, end=1379099800L)
-    >>> owm.weather_history('London,uk', '2013-09-13 16:46:40+00', '2013-09-13 19:16:40+00')
+    >>> owm.weather_history_at_place('London,uk', start=1379090800L, end=1379099800L)
+    >>> owm.weather_history_at_place('London,uk', '2013-09-13 16:46:40+00', '2013-09-13 19:16:40+00')
     >>> from datetime import datetime
-    >>> owm.weather_history('London,uk', datetime(2013, 9, 13, 16, 46, 40), datetime(2013, 9, 13, 19, 16, 40))
+    >>> owm.weather_history_at_place('London,uk', datetime(2013, 9, 13, 16, 46, 40), datetime(2013, 9, 13, 19, 16, 40))
     
 The time boundaries can be expressed either as a UNIX timestamp, a _datetime.datetime_ object or an ISO8601-formatted string (format: "YYYY-MM-DD HH:MM:SS+00").
 
@@ -461,7 +461,7 @@ When you dump to XML you can decide wether or not to print the standard XML enco
 ### Checking if OWM web API is online
 You can check out the OWM web API service availability:
 
-    >>> owm.API_online()
+    >>> owm.is_API_online()
     True
 
 ### Printing objects
