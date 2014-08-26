@@ -30,6 +30,7 @@ This module contains configuration data for the OWM web API 2.5 object model. Sp
 
     * OWM web API endpoint URLs
     * parser objects for API JSON payloads parsing
+    * registry object for City ID lookup
     * cache providers
     * misc data
 
@@ -44,12 +45,13 @@ You can write down your own configuration module and inject it into the PyOWM wh
 The _OWM25_ class extends the _OWM_ abstract base class and provides a method for each of the OWM web API 2.5 endpoint:
 
     # CURRENT WEATHER QUERYING
-    * find current weather at a specific location ---> eg: owm.weather_at('London,UK')
+    * find current weather at a specific location ---> eg: owm.weather_at_place('London,UK')
+    * find current weather at a specific city ID  ---> eg: owm.weather_at_id(1812597)
     * find current weather at specific lon/lat ------> eg: owm.weather_at_coords(-0.107331,51.503614)           
     * find current weathers in all locations 
-      with name is equal/similar to a specific name -> eg: owm.find_weather_by_name('Springfield',search='accurate')
+      with name is equal/similar to a specific name -> eg: owm.weather_at_places('Springfield',search='accurate')
     * find current weathers in all locations
-      in the surroundings of specific lon/lat -------> eg: owm.find_weather_by_coords(-2.15, 57.0)
+      in the surroundings of specific lon/lat -------> eg: owm.weather_around_coords(-2.15, 57.0)
 
     # WEATHER FORECAST QUERYING
     * find 3 hours weather forecast at a specific
@@ -58,7 +60,7 @@ The _OWM25_ class extends the _OWM_ abstract base class and provides a method fo
       location --------------------------------------> eg: owm.daily_forecast('San Francisco,US')
 
     # WEATHER HISTORY QUERYING
-    * find weather history for a specific location --> eg: owm.weather_history('Kiev,UA')
+    * find weather history for a specific location --> eg: owm.weather_history_at_place('Kiev,UA')
     * find historic minutely data measurements for a 
       specific meteostation -------------------------> eg: owm.station_tick_history(39276)
     * find historic hourly data measurements for a 
@@ -86,7 +88,7 @@ This class also stores the reference timestamp for the weather data, that is to 
 
 When using _OWM25_ class for the retrieval of weather history on a location, eg:
 
-    owm.weather_history('Kiev,UA')
+    owm.weather_history_at_place('Kiev,UA')
 
 a list of _Weather_ objects is returned.
 
@@ -99,8 +101,8 @@ When created, every _Observation_ instance is fed with a timestamp that tells wh
 
 When using _OWM25_ class for the retrieval of currently observed weather in multiple locations, eg:
 
-    owm.find_weather_by_name('Springfield',search='accurate')
-    owm.find_weather_by_coords(-2.15, 57.0)
+    owm.weather_at_places('Springfield',search='accurate')
+    owm.weather_around_coords(-2.15, 57.0)
 
 a list of _Observation_ instances is returned to the clients.
 
