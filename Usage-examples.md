@@ -343,7 +343,7 @@ When calling the ``when_*()``  methods you will be provided with a sublist of th
 
 
 ### Getting weather history on a location
-Weather history on a specific location can be retrieved using:
+Weather history on a specific toponym can be retrieved using:
 
     >>> owm.weather_history_at_place('London,uk')
     [ <weather.Weather at 0x00BF81A2>, <weather.Weather at 0x00BF81C8>, ... ]
@@ -356,6 +356,10 @@ A list of ``Weather`` objects is returned. You can can specify a time window in 
     >>> owm.weather_history_at_place('London,uk', datetime(2013, 9, 13, 16, 46, 40), datetime(2013, 9, 13, 19, 16, 40))
     
 The time boundaries can be expressed either as a UNIX timestamp, a _datetime.datetime_ object or an ISO8601-formatted string (format: "YYYY-MM-DD HH:MM:SS+00").
+
+What said before also applies for city ID-based queries:
+
+    >>> owm.weather_history_at_id(12345, start=1379090800L, end=1379099800L)
 
 ### Getting meteostation measurements history
 Weather data measurements history for a specific meteostation is available in three sampling intervals: ``'tick'`` (which stands for minutely), ``'hour'`` and ``'day'``. The calls to be made are:
