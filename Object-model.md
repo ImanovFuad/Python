@@ -75,6 +75,8 @@ In order to interact with the web API, this class leverages an _OWMHTTPClient_ i
 ### The Location class
 The _Location_ class represents a location in the world. Each instance stores the geographic name of the location, the longitude/latitude couple and the country name. These data are retrieved from the OWM web API 2.5 responses' payloads.
 
+_Location_ instances can also be retrieved from City IDs using the _CityIDRegistry_ module.
+
 ### The Weather class
 This class is a databox containing information about weather conditions in a place. Stored data include text information such as weather status (sunny/rainy/snowy/...) and numeric information such as the values of measured phyisical entities (mx/min/current temperatures, wind speed/orientation, humidity, pressure, cloud coverage, ...). 
 
