@@ -19,7 +19,7 @@ What's new in Release 2.0.0
     obs.get_weather().get_detailed_status()  # "ясно"
 ```
 
-* Can now retrieve current weather from city IDs  weather_at_id(id=<id>)
+* Can now retrieve current weather from city IDs
 
 ```
     owm.weather_at_id(5128581)
