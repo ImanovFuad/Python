@@ -58,7 +58,7 @@ What's new in Release 2.0.0
     timeutils.last_hour()
 ```
 
-* Increased test coverage
+* Now checking code coverage via coveralls.io
 
 
 Older Releases
