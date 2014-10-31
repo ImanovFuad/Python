@@ -135,7 +135,7 @@ and then access weather data using the following methods:
     >>> w.get_temperature()                                # Get temperature in Kelvin degs
     {'temp': 293.4, 'temp_kf': None, 'temp_max': 297.5, 'temp_min': 290.9}
     >>> w.get_temperature(unit='celsius')                  # ... or in Celsius degs
-    >>> w.get_temperatire('fahrenheit')                    # ... or in Fahrenheit degs
+    >>> w.get_temperature('fahrenheit')                    # ... or in Fahrenheit degs
 
     >>> w.get_status()                                     # Get weather short status
     'clouds'
