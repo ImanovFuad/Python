@@ -47,11 +47,15 @@ The _OWM25_ class extends the _OWM_ abstract base class and provides a method fo
     # CURRENT WEATHER QUERYING
     * find current weather at a specific location ---> eg: owm.weather_at_place('London,UK')
     * find current weather at a specific city ID  ---> eg: owm.weather_at_id(1812597)
-    * find current weather at specific lon/lat ------> eg: owm.weather_at_coords(-0.107331,51.503614)           
+    * find current weather at specific lat/lon ------> eg: owm.weather_at_coords(-0.107331,51.503614)
+    * find weather currently measured by station ----> eg: owm.weather_at_station(1000)          
     * find current weathers in all locations 
       with name is equal/similar to a specific name -> eg: owm.weather_at_places('Springfield',search='accurate')
     * find current weathers in all locations
       in the surroundings of specific lon/lat -------> eg: owm.weather_around_coords(-2.15, 57.0)
+
+    # METEOSTATIONS QUERYING
+    * find stations close to specific lat/lon -------> eg: owm.stations_at_coords(-0.107331,51.503614)
 
     # WEATHER FORECAST QUERYING
     * find 3 hours weather forecast at a specific
