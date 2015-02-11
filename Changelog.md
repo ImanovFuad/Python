@@ -1,9 +1,80 @@
-What's new in Release 2.0.0
+What's new in Release 2.2.0
 ---------------------------
+
+* New entity Station: represents a meteostation recording weather data
+
+```
+    Station(name, station_ID, station_type, status, lat, lon, distance=None, last_weather=None)
+```
+
+* New feature: search for meteostations around a lat/lon couple
+
+```
+    owm25.station_at_coords(42.4, 13.9)
+```
+
+* New feature: retrieve weather currently measured by a meteostation
+
+```
+    owm25.weather_at_station(916)
+```
+
+* New feature: retrieve weathers currently measured by meteostations within a bounding box
+
+```
+    owm25.weather_at_stations_in_bbox(lat_top_left, lon_top_left, lat_bottom_right, lon_bottom_right, cluster=False, limit=None)
+```
+
+* Can now query for weather forecasts based on geographical coordinates
+
+```
+    three_hours_forecast_at_coords(42.4, 13.9)
+    daily_forecast_at_coords(42.4, 13.9, limit=4)
+```
+
+* Can now query for weather forecasts based on city ID
+
+```
+    three_hours_forecast_at_id(7768)
+    daily_forecast_at_id(7768, limit=4)
+```
+
+* Support querying of extreme weather conditions in Forecaster convenience methods
+
+```
+    when_storm()
+    will_have_storm()
+    will_be_stormy_at()
+
+    when_tornado()
+    will_have_tornado()
+    will_be_tornado_at()
+
+    when_hurricane()
+    will_have_hurricane()
+    will_be_hurricane_at()
+```
+
+* Enriched `Weather` class with methods to support data fields retrieved from meteostations
+
+```
+    get_dewpoint()
+    get_humidex()
+    get_heatindex()
+    get_visibility_distance()
+```
+
+* Now supporting Unicode strings as parameters for all PyOWM public methods
+
+* Increased test coverage
+
+
+
+### Release 2.0.0 ###
 
 * Renaming of some functions in PyOWM public interface (**breaking change!**)
 
-  ```
+```
     owm25.API_online             -> owm25.is_API_online
     owm25.weather_at             -> owm25.weather_at_place
     owm25.find_weather_by_name   -> owm25.weather_at_places
@@ -58,7 +129,7 @@ What's new in Release 2.0.0
     timeutils.last_hour()
 ```
 
-* Now checking code coverage via coveralls.io
+* Now checking code coverage via *coveralls.io*
 
 
 Older Releases
