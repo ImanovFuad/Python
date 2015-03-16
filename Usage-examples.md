@@ -54,7 +54,7 @@ Querying for current weather is simple: provide an ``OWM`` object with the locat
 
     obs = owm.weather_at_place('London,uk')                          # Toponym
     obs = owm.weather_at_id(2643741)                           # City ID
-    obs = owm.weather_at_coords(-0.107331,51.503614)           # Lon/lat
+    obs = owm.weather_at_coords(-0.107331,51.503614)           # lat/lon
 
 An ``Observation`` object will be returned, containing weather info about the location matching the toponym/ID/coordinates you provided. Be precise when specifying locations!
 
