@@ -132,14 +132,14 @@ and then access weather data using the following methods:
     >>> w.get_pressure()                                   # Get atmospheric pressure
     {'press': 1009, 'sea_level': 1038.381}
     
-    >>> w.get_temperature()                                # Get temperature in Kelvin degs
+    >>> w.get_temperature()                                # Get temperature in Kelvin
     {'temp': 293.4, 'temp_kf': None, 'temp_max': 297.5, 'temp_min': 290.9}
     >>> w.get_temperature(unit='celsius')                  # ... or in Celsius degs
     >>> w.get_temperature('fahrenheit')                    # ... or in Fahrenheit degs
 
     >>> w.get_status()                                     # Get weather short status
     'clouds'
-    >>> w.get_detailedS_status()                           # Get detailed weather status
+    >>> w.get_detailed_status()                           # Get detailed weather status
     'Broken clouds'
 
     >>> w.get_weather_code()                               # Get OWM weather condition code
