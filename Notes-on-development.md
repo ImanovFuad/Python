@@ -1,3 +1,9 @@
+Installing development dependencies
+-----------------------------------
+From the project root folder, just run:
+
+`pip install -r dev-requirements.txt`
+
 Branching
 ---------
 
