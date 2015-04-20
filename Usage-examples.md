@@ -5,7 +5,7 @@ As simple as:
 
 # Create global OWM object
 Use your OWM API key if you have one (read [here](http://openweathermap.org/appid) 
-on how to obtain an API key).
+on how to obtain an API key). By default, if you don't specify which API subscription type you want to use, a free-subscription OWM global object is instantiated:
 
     >>> API_key = 'G097IueS-9xN712E'
     >>> owm = OWM(API_key)
@@ -35,6 +35,12 @@ Advanced users might want to inject into the library a specific configuration: t
 
 Be careful! You must provide a well-formatted configuration module for the library to work properly and your module must be in your PYTHONPATH. More on configuration modules formatting can be found [here](https://github.com/csparpa/pyowm/wiki/Object-model#wiki-the-configuration25-module).
 
+# Using a paid (pro) API key subscription
+If you purchased a pro subscription on the OWM web API, you can instantiate the global OWM like this:
+
+    >>> owm = pyowm.OWM('abcdef', subscription_type='pro')
+
+When instantiating paid subscription OWM objects, you must provide an API key.
 
 # OWM web API version 2.5 usage examples
 
