@@ -1,3 +1,8 @@
+What's new in Release 2.2.1
+---------------------------
+
+* Fixed bug on visibility distance parsing
+
 What's new in Release 2.2.0
 ---------------------------
 
