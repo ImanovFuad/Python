@@ -32,5 +32,5 @@ That's simple as well!
 
 1. Open an issue on GitHub (describe in detail the feature you're proposing)
 2. Depending on the entity of the request:
-- if it's going to be a breaking change, the feature will be scheduled for embedding into the next major release - so no code shall be provided by then
-- if it's only an enhancement, please proceed with the above workflow and submit a pull request from a *feature/xxx* branch you'll create on your fork
+   - if it's going to be a breaking change, the feature will be scheduled for embedding into the next major release - so no code shall be provided by then
+   - if it's only an enhancement, please proceed with the above workflow and submit a pull request from a *feature/xxx* branch you'll create on your fork
