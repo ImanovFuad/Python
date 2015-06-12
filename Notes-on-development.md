@@ -18,9 +18,19 @@ So how do I submit bugfixes?
 ---------------------------
 That's simple! Just:
 
-1. Fork the repo on GitHub
-2. Create a new branch from the development, name it *hotfix/xxx* where xxx is a very short description of the bug, eg: hotfix/wind-speed-neglected
-3. Work on that new branch - commit, commit, commit
-4. Let's improve the code quality of PyOWM: if you can, write at least one unit test that proves that the bug has been correctly fixed
-5. Issue a pull request
-6. If I'm not quick on checking the pull request, please ping me!
+1. File a bug issue on GitHub
+2. Fork the repo on GitHub
+3. Create a new branch from the development, name it *hotfix/xxx* where xxx is a very short description of the bug, eg: hotfix/wind-speed-neglected
+4. Work on that new branch - commit, commit, commit
+5. Let's improve the code quality of PyOWM: if you can, write at least one unit test that proves that the bug has been correctly fixed
+6. Issue a pull request and name it after the bug issue you've opened
+7. If I'm not quick on checking the pull request, please ping me!
+
+...and how do I submit new feature requests?
+--------------------------------------------
+That's simple as well!
+
+1. Open an issue on GitHub (describe in detail the feature you're proposing)
+2. Depending on the entity of the request:
+- if it's going to be a breaking change, the feature will be scheduled for embedding into the next major release - so no code shall be provided by then
+- if it's only an enhancement, please proceed with the above workflow and submit a pull request from a *feature/xxx* branch you'll create on your fork
