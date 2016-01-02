@@ -1,3 +1,16 @@
+What's new in Release 2.3.0
+---------------------------
+
+* New feature: can now specify wether to use the pro OWM API version or not:
+
+```
+    owm = OWM(subscription_type='pro', API_key='my-pro-api-key')
+```
+
+* Better support for Python 3 on `CityIDRegistry`
+* Bug fixes on parsing of humidity,  wind and visibility
+
+
 What's new in Release 2.2.1
 ---------------------------
 
