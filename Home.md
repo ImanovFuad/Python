@@ -7,8 +7,6 @@ PyOWM is released under the [MIT](https://github.com/csparpa/pyowm/blob/master/L
 
 PyOWM does not require any additional library to the standard Python library modules.
 
-### Current PyOWM version
-1.0.0
 
 ### Currently supported Python versions
 2.7, 3.2, 3.3
