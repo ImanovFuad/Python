@@ -1,3 +1,7 @@
+What's new in Release 2.3.1
+---------------------------
+ * Fixing bug: always send an API key to OWM API
+
 What's new in Release 2.3.0
 ---------------------------
 
