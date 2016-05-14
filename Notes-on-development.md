@@ -4,6 +4,11 @@ From the project root folder, just run:
 
 `pip install -r dev-requirements.txt`
 
+It is adviced that you do it on a `virtualenv` or, if you prefer to spin up the whole dev environment with just one command, you can run the PyOWM Docker image:
+
+`docker run -d --name pyowm csparpa/pyowm`
+
+
 Branching
 ---------
 
