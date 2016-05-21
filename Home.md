@@ -31,15 +31,20 @@ You can install from source with [setuptools](https://pypi.python.org/pypi/setup
 Windows users may also install PyOWM using a specific .exe binary which is available on the [Python Package Index](https://pypi.python.org/pypi/pyowm)
 
 ### Test the codebase
-The full test battery can be issued by moving into the library installation folder
-and executing:
+Unit tests can be run by moving into the library installation folder and executing:
+
+    python setup.py test -s tests.unit
+
+This will run tests using your default Python interpreter (usually is 2.7).
+You can test all supported Python interpreter versions using `tox`:
+
+    tox
+
+The full test battery can be issued by moving into the library installation folder and executing:
 
     python setup.py test
 
-this will also run integration tests (which need a valid API key to be provided and network connectivity in order to talk to the real OWM web API).
-If you just want to run unit tests, move into the library installation folder and launch with:
-
-    python setup.py test -s tests.unit
+Be aware that this will also run integration tests (which need a valid API key to be provided and network connectivity in order to talk to the real OWM web API): therefore you will need to put your own API key inside the `pyowm.tests.functional.api_key` module
 
 
 ### API documentation
