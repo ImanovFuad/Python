@@ -36,7 +36,7 @@ and executing:
 
     python setup.py test
 
-this will also run integration tests (which need time and a network connectivity in order to reach the real OWM web API).
+this will also run integration tests (which need a valid API key to be provided and network connectivity in order to talk to the real OWM web API).
 If you just want to run unit tests, move into the library installation folder and launch with:
 
     python setup.py test -s tests.unit
