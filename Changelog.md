@@ -1,6 +1,10 @@
+What's new in Release 2.3.2
+---------------------------
+ * Bugfix: no crashes when data about wind, snow and rain in JSON API responses are `null`
+
 What's new in Release 2.3.1
 ---------------------------
- * Fixing bug: always send an API key to OWM API
+ * Bugfix: always send an API key to OWM API
 
 What's new in Release 2.3.0
 ---------------------------
