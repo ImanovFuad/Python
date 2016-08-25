@@ -108,6 +108,8 @@ If you want to know when the weather observation data have been received, just c
     1379091600L
     >>> obs.get_reception_time(timeformat='iso')           # ISO8601
     '2013-09-13 17:00:00+00'
+    >>> obs.get_reception_time(timeformat='date')          # datetime.datetime instance
+    datetime.datetime(2013, 09, 13, 17, 0, 0, 0)
 
 You can retrieve the ``Weather`` object like this:
 
@@ -119,6 +121,8 @@ and then access weather data using the following methods:
     1377872206L
     >>> w.get_reference_time(timeformat='iso')             # ...or in ISO8601
     '2013-08-30 14:16:46+00'
+    >>> w.get_reference_time(timeformat='date')            # ...or as a datetime.datetime object
+    datetime.datetime(2013, 08, 30, 14, 16, 46, 0)
     
     >>> w.get_clouds()                                     # Get cloud coverage
     65
@@ -212,6 +216,8 @@ A ``Forecast`` object encapsulates the ``Location`` object relative to the forec
     1379091600L
     >>> f.get_reception_time('iso')                      # ISO8601
     '2013-09-13 17:00:00+00'
+    >>> f.get_reception_time('date')                     # datetime.datetime instance
+    datetime.datetime(2013, 09, 13, 17, 0, 0, 0)
     
     # Which time interval for the forecast? 
     >>> f.get_interval()
@@ -244,12 +250,16 @@ The ``Forecaster`` class provides a few convenience methods to inspect the weath
     1379090800L
     >>> fc.when_starts('iso')                             # ISO8601
     '2013-09-13 16:46:40+00'
+    >>> fc.when_starts('date')
+    datetime.datetime(2013, 09, 13, 16, 46, 40, 0)        # datetime.datetime instance
     
     # ...and when will it end?
     >>> fc.when_ends()                                    # UNIX GMT time
     1379902600L
     >>> fc.when_ends('iso')                               # ISO8601
     '2013-09-23 02:16:40+00'
+    >>> fc.when_ends('date')                              # datetime.datetime instance
+    datetime.datetime(2013, 09, 13, 16, 46, 40, 0)
 
 In example, you can ask the ``Forecaster`` instance to tell which is the weather forecast for a specific point in time. You can specify this time using a UNIX timestamp, an ISO8601-formatted string or a Python ``datetime.datetime`` object (all times must will be handled as GMT):
 
@@ -389,7 +399,8 @@ and query data directly on it:
     39276
     >>> sh.get_interval()                     # Data sampling interval
     'tick'
-    >>> sh.get_reception_time()               # Timestamp when data was received (GMT UNIXtime or ISO8601)
+    >>> sh.get_reception_time()               # Timestamp when data was received (GMT UNIXtime, ISO8601
+                                              # or datetime.datetime)
     1377862896L
     >>> sh.get_reception_time("iso")
     '2013-08-30 20:07:57+00'
