@@ -1,3 +1,15 @@
+What's new in Release 2.4.0
+---------------------------
+ * New features:
+    - `weather_at_ids`
+    - `weather_history_at_coords`
+    - introduced support for Python 3.4 and 3.5
+ * Bugfixes: full support for Unicode place names
+ * Enhancements:
+    - datetime representation of reception/reference times in `Weather`, `Forecast`, `History` objects
+    - better exception hierarchy
+ * Updated city ID registry files
+
 What's new in Release 2.3.2
 ---------------------------
  * Bugfix: no crashes when data about wind, snow and rain in JSON API responses are `null`
