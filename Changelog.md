@@ -1,3 +1,14 @@
+What's new in Release 2.5.0
+---------------------------
+ * New features:
+    - Air Pollution data API endpoints: `OWM25.coindex_around_coords`, `OWM25.ozone_around_coords`
+    - UV data endpoint: `OWM25.uvindex_around_coords`
+ * Bugfixes:
+    - fixed `OWM25.is_API_online` method (was not working)
+    - more robust support for querying data on Unicode place names
+  * Enhancements: now datetime objects across all library are timezone-aware
+  * [PyOWM Slack team](http://pyowm-slackin.herokuapp.com/) is live!
+
 What's new in Release 2.4.0
 ---------------------------
  * New features:
