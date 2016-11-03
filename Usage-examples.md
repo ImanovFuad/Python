@@ -357,6 +357,8 @@ value will be returned, telling if the queried weather condition will apply to t
 
 When calling the ``when_*()``  methods you will be provided with a sublist of the ``Weather`` objects list in into the ``Forecaster`` instance, with items having as weather condition the one the method queries for.
 
+### Note on weather history
+Weather history retrieval is a *[paid OWM API feature](https://openweathermap.org/price)*.
 
 ### Getting weather history on a location
 Weather history on a specific toponym can be retrieved using:
