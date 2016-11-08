@@ -24,10 +24,13 @@ $ python setup.py install
 
 Windows users can get an exe installer for earlier PyOWM versions on the [Python Package Index](https://pypi.python.org/pypi/pyowm)
 
-### On ArchLinux with Yaourt
+### On ArchLinux with `Yaourt`
 Run:
 
 ```
-Yaourt -S python2-owm  # Python 2.7
-Yaourt -S python-owm   # Python 3.x
+Yaourt -S python2-owm  # Python 2.7 (https://aur.archlinux.org/packages/python-owm)
+Yaourt -S python-owm   # Python 3.x (https://aur.archlinux.org/packages/python2-owm)
 ```
+
+### On Debian/Ubuntu with `apt-get`
+Coming soon...
