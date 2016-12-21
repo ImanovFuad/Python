@@ -2,6 +2,7 @@
  - [Build and pull Docker image](#docker_img)
  - [Distribution channels](#dist_channels)
  - [GitHub Wiki management](#gh_wiki)
+ - [Installing multiple Python versions](#multiple_pys)
  - [Goodreads](#goodreads)
  - [Release Checklist](#release)
 
@@ -68,8 +69,15 @@ $ git submodule init
 
 Clone the wiki as a submodule by running: `git submodule update --init`
 
+<a name="multiple_pys"></a>
+On Ubuntu:
+```shell
+$ sudo apt-add-repository ppa:fkrull/deadsnakes
+$ sudo apt-get update
+$ sudo apt-get install python3.2 python 3.3
+```
 
-< name="goodreads"></a>
+<a name="goodreads"></a>
 ## Goodreads
  - [Jeff Knupp on open sourcing a Python project the right way](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
 
