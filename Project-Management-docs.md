@@ -40,6 +40,7 @@ docker build -t csparpa/pyowm:${VERSION} .
 docker tag csparpa/pyowm:${VERSION} csparpa/pyowm:latest
 
 # Push to DockerHub
+# (if you get unauthorized error, use: docker login)
 docker push csparpa/pyowm:${VERSION}
 docker push csparpa/pyowm:latest
 ```
