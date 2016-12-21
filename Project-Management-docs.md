@@ -2,7 +2,9 @@
  - [Build and pull Docker image](#docker_img)
  - [Distribution channels](#dist_channels)
  - [GitHub Wiki management](#gh_wiki)
+ - [Goodreads](#goodreads)
  - [Release Checklist](#release)
+
 
 <a name="docker_img"></a>
 ## Build and push Docker image
@@ -65,6 +67,11 @@ $ git submodule init
 ```
 
 Clone the wiki as a submodule by running: `git submodule update --init`
+
+
+< name="goodreads"></a>
+## Goodreads
+ - [Jeff Knupp on open sourcing a Python project the right way](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
 
 
 <a name="release"></a>
