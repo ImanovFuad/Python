@@ -64,6 +64,9 @@ $ git submodule add https://github.com/csparpa/pyowm.wiki.git wiki
 $ git submodule init
 ```
 
+Clone the wiki as a submodule by running: `git submodule update --init`
+
+
 <a name="release"></a>
 ## Release checklist
 * consider major, minor and patch version numbers according to SemVer
