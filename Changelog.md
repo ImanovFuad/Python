@@ -2,8 +2,9 @@ What's new in Release 2.6.0
 ---------------------------
  * New features:
     - new method `owm25.weather_at_zip_code`
+    - new methods `CityIDRegistry.ids_for` and `CityIDRegistry.locations_for`
+    - introduced deprecation decorators to mark methods that will be removed/modified in future versions
     - Python 3.6 support
-    - introduced deprecation decorator to mark methods that will be removed/modified in future versions
  * Bugfixes:
     - reverted a [breaking interface change](https://github.com/csparpa/pyowm/issues/158) wrongly released on 2.5.0
     - fixed `CityIDRegistry.id_for` and `CityIDRegistry.location_for` methods -> oh man, they were so buggy!
