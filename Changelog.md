@@ -1,8 +1,8 @@
 What's new in Release 2.5.0
 ---------------------------
  * New features:
-    - [Air Pollution data API endpoints](https://github.com/csparpa/pyowm/wiki/Air-Pollution-endpoints): `OWM25.coindex_around_coords`, `OWM25.ozone_around_coords`
-    - [UV data endpoint](https://github.com/csparpa/pyowm/wiki/Ultra-Violet-endpoint): `OWM25.uvindex_around_coords`
+    - Air Pollution data API: [Carbon Monoxide endpoint](https://github.com/csparpa/pyowm/wiki/Air-Pollution-API:-Carbon-Monoxide-Index): `OWM25.coindex_around_coords`, [Ozone endpoint](https://github.com/csparpa/pyowm/wiki/Air-Pollution-API:-Ozone): `OWM25.ozone_around_coords`
+    - [Ultraviolet data API](https://github.com/csparpa/pyowm/wiki/Ultra-Violet-API): `OWM25.uvindex_around_coords`
  * Bugfixes:
     - fixed `OWM25.is_API_online` method (was not working)
     - more robust support for querying data on Unicode place names
