@@ -1,5 +1,6 @@
 ## Table of Contents
  - [Build and pull Docker image](#docker_img)
+ - [Distribution channels](#dist_channels)
 
 
 <a name="docker_img"></a>
@@ -38,3 +39,10 @@ docker tag csparpa/pyowm:${VERSION} csparpa/pyowm:latest
 docker push csparpa/pyowm:${VERSION}
 docker push csparpa/pyowm:latest
 ```
+
+<a name="dist_channels"></a>
+## Distribution channels
+
+**AUR (ArchLinux)**
+  * https://aur.archlinux.org/packages/python-owm/
+  * https://wiki.archlinux.org/index.php/PKGBUILD
