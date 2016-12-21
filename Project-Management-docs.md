@@ -81,6 +81,8 @@ $ sudo apt-get install python3.2 python 3.3
 <a name="goodreads"></a>
 ## Goodreads
  - [Jeff Knupp on open sourcing a Python project the right way](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
+ - [Guide on setuptools](https://pythonhosted.org/an_example_pypi_project/setuptools.html)
+ - [Setup.py constant values reference](https://pypi.python.org/pypi?%3Aaction=list_classifiers)
 
 
 <a name="release"></a>
