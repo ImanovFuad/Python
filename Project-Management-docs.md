@@ -1,6 +1,7 @@
 ## Table of Contents
  - [Build and pull Docker image](#docker_img)
  - [Distribution channels](#dist_channels)
+ - [GitHub Wiki management](#gh_wiki)
 
 
 <a name="docker_img"></a>
@@ -46,3 +47,19 @@ docker push csparpa/pyowm:latest
 **AUR (ArchLinux)**
   * https://aur.archlinux.org/packages/python-owm/
   * https://wiki.archlinux.org/index.php/PKGBUILD
+
+
+<a name="gh_wiki"></a>
+## GitHub Wiki management
+
+The Wiki is handled as a Git submodule of the project.
+
+The submodule is "mounted" under the '/wiki' folder.
+
+These are the instructions to setup the submodule:
+
+```shell
+$ cd <PYOWM-root>
+$ git submodule add https://github.com/csparpa/pyowm.wiki.git wiki
+$ git submodule init
+```
