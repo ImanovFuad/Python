@@ -1,6 +1,11 @@
+## Contributing is easy, baby!
+ - [Installing development dependencies](#inst_dev_deps)
+ - [Guidelines for code branching(#guids_branching)
+ - [Versioning guidelines](#guids_versioning)
+ - [Design guidelines](#guids_design)
 
-Contributing is easy!
 
+<a name="inst_dev_deps"></a>
 ## Installing development dependencies
 From the project root folder, just run:
 
@@ -10,7 +15,7 @@ It is adviced that you do it on a `virtualenv` or, if you prefer to spin up the 
 
 `docker run -d --name pyowm csparpa/pyowm`
 
-
+<a name="guids_branching"></a>
 ## Guidelines for code branching
 The project adopts @nvie's branching model:
 
@@ -38,9 +43,11 @@ That's simple as well!
    - if it's going to be a breaking change, the feature will be scheduled for embedding into the next major release - so no code shall be provided by then
    - if it's only an enhancement, please proceed with the above workflow and submit a pull request from a *feature/xxx* branch you'll create on your fork
 
+<a name="guids_versioning"></a>
 ## Versioning guidelines
 Since version 2.2 PyOWM adopts [Semantic Versioning](http://semver.org/).
 
+<a name="guids_design"></a>
 ## Design guidelines
 
 + Use user-friendly and meaningful names for API endpoints wrapping.
