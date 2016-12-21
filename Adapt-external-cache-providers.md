@@ -4,4 +4,4 @@ For your convenience, you can find drafts for a few adapters in the [pyowm-cache
 
 Adapters can be injected directly via an external configuration module - read how in [the usage examples relevant section](https://github.com/csparpa/pyowm/wiki/Usage-examples#wiki-create-global-owm-object) 
 
-An more detailed example on how to write and wire a custom adapter into the PyOWM library's code is described [here](http://claudiosparpaglione.wordpress.com/2013/12/13/how-to-use-memcached-with-pyowm/).
+An more detailed example on how to write and wire a custom adapter into the PyOWM library's code is described [here](http://csparpa.github.io/blog/2013/12/how-to-use-memcached-with-pyowm.html).
