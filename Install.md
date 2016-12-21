@@ -17,6 +17,11 @@ $ unzip <zip archive>   # or tar -xzf <tar.gz archive>
 $ cd pyowm-x.y.z
 $ python setup.py install
 ```
+The .egg will be installed into the system-dependent Python libraries folder:
+
+    C:\PythonXY\Lib\site-packages            # Windows
+    /usr/local/lib/pythonX.Y/dist-packages   # Ubuntu
+    /usr/local/lib/pythonX.Y/dist-packages   # MacOS 10.5.4
 
 ## Platform-specific installations
 
