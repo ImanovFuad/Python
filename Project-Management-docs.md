@@ -90,23 +90,30 @@ $ sudo apt-get install python3.2 python 3.3
 ## Releasing
 
 ### Checklist
-* consider major, minor and patch version numbers according to SemVer
-* update `constants.py`
-* update `setup.py`
-* update city ID files
-* check for domain entities changes and update Django models on https://github.com/csparpa/django-pyowm
-* update `README.md`
-* update GitHub Wiki pages:
-  - changelog
-  - deprecations
-* run tests locally using `tox` (or `setup.py` with all Python supported envs)
-* update local technical docs into `docs/` folder
-* generate documentation locally
-* merge develop branch into master branch (no feature/hotfix branches left open)
-* close milestone on GitHub
-* tag release on GitHub
-* generate and upload release on pypi
-* push any update to Docker image on DockerHub
+ 1. CODE
+   - update version on constants.py
+   - update setup.py
+   - update city ID files with: `cd scripts & python generate_city_id_files.py` - then check outputs
+   - update README.md
+   - update technical docs in `docs` folder
+   - run unit tests with: `tox`
+   - run integration tests
+   - generate documentation locally with: `cd sphinx & make clean & make html` - then fix any warnings/errors
+   - push dump commit
+ 2. GITHUB
+   - new pull request: merge develop branch into master branch
+   - close milestone on GitHub
+   - update GitHub Wiki pages
+   - update CHANGELOG
+   - update DEPRECATIONS
+   - tag release on GitHub
+ 3. DISTRIBUTION
+   - generate new Docker image with: `cd scripts & bash generate_docker_image <x.y.z>`
+   - push Docker image to DockerHub with: `cd scripts & bash publish_to_dockerhub.sh <x.y.z>`
+   - generate pypi distributions with: `cd scripts & bash generate_pypi_dist.sh`
+   - upload release on pypi: `cd scripts & bash publish_to_pypi.sh`
+ 4. RELATED PROJECTS
+   - check for domain entities changes and update Django models on [django-pyowm](https://github.com/csparpa/django-pyowm)
 
 ### Detailed steps
 
