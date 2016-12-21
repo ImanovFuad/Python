@@ -1,6 +1,6 @@
 ## Contributing is easy, baby!
  - [Installing development dependencies](#inst_dev_deps)
- - [Guidelines for code branching(#guids_branching)
+ - [Guidelines for code branching](#guids_branching)
  - [Versioning guidelines](#guids_versioning)
  - [Design guidelines](#guids_design)
 
