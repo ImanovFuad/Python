@@ -1,9 +1,6 @@
-You can query the OWM API for Carbon Monoxide (CO) and Ozone measurements in the surroundings of
-specific geocoordinates.
+You can query the OWM API for Ozone (O3) measurements in the surroundings of specific geocoordinates.
 
-Please refer to the official API docs for [CO](http://openweathermap.org/api/pollution/v1/co)
-and [O3](http://openweathermap.org/api/pollution/v1/o3) data consumption for details about
-how the search radius is influenced by the decimal digits on the provided lat/lon values.
+Please refer to the official API docs for [CO](http://openweathermap.org/api/pollution/v1/co) data consumption for details about how the search radius is influenced by the decimal digits on the provided lat/lon values.
 
 Queries return the latest CO Index and Ozone values available since the specified
 `start` date and across the specified `interval` timespan. If you don't
