@@ -2,7 +2,7 @@
  - [Build and pull Docker image](#docker_img)
  - [Distribution channels](#dist_channels)
  - [GitHub Wiki management](#gh_wiki)
-
+ - [Release Checklist](#release)
 
 <a name="docker_img"></a>
 ## Build and push Docker image
@@ -63,3 +63,20 @@ $ cd <PYOWM-root>
 $ git submodule add https://github.com/csparpa/pyowm.wiki.git wiki
 $ git submodule init
 ```
+
+<a name="release"></a>
+## Release checklist
+* consider major, minor and patch version numbers according to SemVer
+* update constants.py
+* update setup.py
+* update city ID files
+* check for domain entities changes and update Django models on https://github.com/csparpa/django-pyowm
+* update README.md
+* update github wiki pages (including changelog+deprecations) in the /wiki folder
+* run tests locally using tox (or setup.py with all Python supported envs)
+* generate documentation locally
+* merge develop branch into master branch (no feature/hotfix branches left open)
+* close milestone on github
+* tag release on github
+* generate and upload release on pypi
+* update docker image on DockerHub
