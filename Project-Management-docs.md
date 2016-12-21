@@ -131,6 +131,11 @@ Now you are ready to generate HTML docs by launching:
 
 HTML docs will be generated under sphinx/_build/html
 
+### Updating City ID Files
+```shell
+cd scripts
+python generate_city_id_files.py
+```
 
 ### Uploading to PyPi using Twine
 ```shell
