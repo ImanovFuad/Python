@@ -1,3 +1,3 @@
-doc1
-doc2
-doc3
+- [doc1](http://google.it)
+- doc2
+- doc3
