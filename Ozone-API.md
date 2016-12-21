@@ -1,3 +1,19 @@
+You can query the OWM API for Ozone measurements in the surroundings of specific geocoordinates.
+
+Please refer to the official API docs for [O3](http://openweathermap.org/api/pollution/v1/o3) data consumption for details about how the search radius is influenced by the decimal digits on the provided lat/lon values.
+
+Queries return the latest Ozone values available since the specified
+`start` date and across the specified `interval` timespan. If you don't
+specify any value for `interval` this is defaulted to: `'year'`.
+Eg:
+
+  - `start='2016-07-01 15:00:00Z'` and `interval='hour'`: searches from 3 to 4 PM of day 2016-07-01
+  - `start='2016-07-01'` and `interval='day'`: searches on the day 2016-07-01
+  - `start='2016-07-01'` and `interval='month'`: searches on the month of July 2016
+  - `start='2016-07-01'` and `interval='year'`: searches from day 2016-07-01 up to the end of year 2016
+
+Please be aware that also data forecasts can be returned, depending on the search query.
+
 ### Querying Ozone data
 
 Getting the data is easy:
