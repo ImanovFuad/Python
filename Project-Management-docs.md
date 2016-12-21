@@ -90,19 +90,22 @@ $ sudo apt-get install python3.2 python 3.3
 
 ### Checklist
 * consider major, minor and patch version numbers according to SemVer
-* update constants.py
-* update setup.py
+* update `constants.py`
+* update `setup.py`
 * update city ID files
 * check for domain entities changes and update Django models on https://github.com/csparpa/django-pyowm
-* update README.md
-* update github wiki pages (including changelog+deprecations) in the /wiki folder
-* run tests locally using tox (or setup.py with all Python supported envs)
+* update `README.md`
+* update GitHub Wiki pages:
+  - changelog
+  - deprecations
+* run tests locally using `tox` (or `setup.py` with all Python supported envs)
+* update local technical docs into `docs/` folder
 * generate documentation locally
 * merge develop branch into master branch (no feature/hotfix branches left open)
-* close milestone on github
-* tag release on github
+* close milestone on GitHub
+* tag release on GitHub
 * generate and upload release on pypi
-* update docker image on DockerHub
+* push any update to Docker image on DockerHub
 
 ### Detailed steps
 
@@ -151,5 +154,6 @@ Enter the main project directory and issue:
 
 If you don't want artifacts to be uploaded but just be created locally, omit the `upload` switch.
 
-[Guide](http://pythonhosted.org/an_example_pypi_project/setuptools.html#intermezzo-pypirc-file-and-gpg)
-[Issue](http://stackoverflow.com/questions/1569315/setup-py-upload-is-failing-with-upload-failed-401-you-must-be-identified-t)
+Some references:
+ - [Guide](http://pythonhosted.org/an_example_pypi_project/setuptools.html#intermezzo-pypirc-file-and-gpg)
+ - [Issue](http://stackoverflow.com/questions/1569315/setup-py-upload-is-failing-with-upload-failed-401-you-must-be-identified-t)
