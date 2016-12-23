@@ -29,12 +29,12 @@ $ pythonX.Y setup.py test -s tests.unit`
 ### Integration tests
 Insert your API key into this module:
 
-    tests.functional.api_key
+    tests.integration.api_key
 
 and then you can run the integration tests from the library installation 
 folder with:
 
-    $ cd tests/functional
+    $ cd tests/integration
     $ tox
 
 for Python interpreter version XY.
