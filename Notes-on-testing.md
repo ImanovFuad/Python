@@ -1,5 +1,5 @@
 
-The PyOWM has a strong focus on testing: we want it to be _an open source project with industrial-quality_!
+The PyOWM has a strong focus on testing: we want it to be _an open source project with industrial quality_!
 
 ## Unit tests
 Unit tests aim to test the SW API of each class/module.
@@ -36,7 +36,6 @@ and then you can run the integration tests with:
     $ cd tests/integration
     $ tox
 
-for Python interpreter version XY.
 Please note that depending on your subscription type some of the tests may be neglected, eg: if you have a free subscription tier, the test cases that invoke the OWM API to get historical weather data will fail as these data can only be retrieved using a paid account.
 
 ## Testing using Docker
