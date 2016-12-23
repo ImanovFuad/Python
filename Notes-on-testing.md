@@ -26,7 +26,7 @@ $ pythonX.Y setup.py test -s tests.unit`
 ```
 
 
-### Functional tests
+### Integration tests
 Insert your API key into this module:
 
     tests.functional.api_key
