@@ -27,18 +27,17 @@ $ pythonX.Y setup.py test -s tests.unit`
 
 
 ### Integration tests
-Insert your API key into this module:
+Export your API Key as an environment variable named `OWM_API_KEY`:
 
-    tests.integration.api_key
+    $ export OWM_API_KEY='<your-api-key>'
 
-and then you can run the integration tests from the library installation 
-folder with:
+and then you can run the integration tests with:
 
     $ cd tests/integration
     $ tox
 
 for Python interpreter version XY.
-Please note that depending on your subscription type some of the tests may fail, eg: if you have a free subscription tier, the test cases that invoke the OWM API to get historical weather data will fail as these data can only be retrieved using a paid account.
+Please note that depending on your subscription type some of the tests may be neglected, eg: if you have a free subscription tier, the test cases that invoke the OWM API to get historical weather data will fail as these data can only be retrieved using a paid account.
 
 ## Testing using Docker
 [A Docker image](https://github.com/csparpa/pyowm/wiki/Docker) is available for developing/testing PyOWM.
