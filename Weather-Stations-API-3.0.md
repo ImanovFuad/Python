@@ -1,4 +1,4 @@
-# Study of OWM Station API
+# Study of OWM Weather Stations API
 
 You can use the OWM API to manage your own meteostations and to publish real weather data to the OWM API service, thus helping to improve the quality of the overall weather forecasts.
 Moreover, you can get punctual and aggregated data related to your stations' measurements.
