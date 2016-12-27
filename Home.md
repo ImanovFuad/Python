@@ -3,8 +3,6 @@
 
 ## Supported OpenWeatherMap products
  - Weather API version: 2.5
- - Air Pollution API: 3.0
- - Ultraviolet API: 3.0
 
 ## Currently supported platforms
 Windows, Linux, OSX
