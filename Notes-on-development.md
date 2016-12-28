@@ -1,9 +1,18 @@
 ## Contributing is easy, baby!
+Cut the corners by reading the [quick guide](#quick_guide)... 
+
+..or dive deeper:
  - [Installing development dependencies](#inst_dev_deps)
  - [Guidelines for code branching](#guids_branching)
  - [Versioning guidelines](#guids_versioning)
  - [Design guidelines](#guids_design)
 
+<a name="quick_guide"></a>
+## Quick Guide
+A few simple steps:
+  1. Fork the PyOWM repository
+  2. On your fork, work on the **development branch** (_not the master branch!!!_) or on a **ad-hoc topic branch**. Don't forget to insert your name in the `CONTRIBUTORS.md` file!
+  3. Submit a [pull request](https://help.github.com/articles/about-pull-requests/)
 
 <a name="inst_dev_deps"></a>
 ## Installing development dependencies
