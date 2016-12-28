@@ -8,17 +8,17 @@ This API is still in _beta testing_.
 # API methods
 ## Stations
 ```
-GET /stations
-GET /stations/{id}
-POST /stations
-PUT /stations/{id}
-DELETE /stations/{id}
+GET http://api.openweathermap.org/data/3.0/stations
+GET http://api.openweathermap.org/data/3.0/stations/{id}
+POST http://api.openweathermap.org/data/3.0/stations
+PUT http://api.openweathermap.org/data/3.0/stations/{id}
+DELETE http://api.openweathermap.org/data/3.0/stations/{id}
 ```
 
 ## Measurements
 ```
-POST /measurements
-GET /measurements
+POST http://api.openweathermap.org/data/3.0/measurements
+GET http://api.openweathermap.org/data/3.0/measurements
 
 ```
 
