@@ -6,7 +6,21 @@ Moreover, you can get punctual and aggregated data related to your stations' mea
 This API is still in _beta testing_.
 
 # API methods
-TBD
+## Stations
+```
+GET /stations
+GET /stations/{id}
+POST /stations
+PUT /stations/{id}
+DELETE /stations/{id}
+```
+
+## Measurements
+```
+POST /measurements
+GET /measurements
+
+```
 
 # Object model
 TBD
