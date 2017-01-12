@@ -1,1 +1,1 @@
-5
+https://github.com/csparpa/pyowm/blob/master/pyowm/docs/usage-examples.md
