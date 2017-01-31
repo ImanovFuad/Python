@@ -1,3 +1,8 @@
+What's new in Release 2.6.1
+---------------------------
+ * Bugfixes:
+    - 2.6.0 was not packaging resource files (eg. city IDs text files)
+
 What's new in Release 2.6.0
 ---------------------------
  * New features:
