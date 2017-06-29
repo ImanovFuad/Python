@@ -1,7 +1,7 @@
 You can query the OWM API for Ultra Violet (UV) intensity data in the surroundings of
 specific geocoordinates.
 
-Please refer to the official API docs for [UV](http://openweathermap.org/api/uvi)
+Please refer to the official API docs for [UV](http://openweathermap.org/api/old-uvi)
 data consumption for details about how the search radius is influenced by the decimal 
 digits on the provided lat/lon values.
 
