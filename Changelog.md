@@ -22,7 +22,7 @@ What's new in Release 2.7.0
   - improved integrations tests organization and running
 
 - **Breaking changes**:
-  - OWM decided to change the syntax of API endpoint for fetching UV data and its format in a non-retrocompatible manner. This results into `UVIndex` object entity fields changing, as well as the corresponding OWM25 method signature (`owm25.uvindex_around_coords`).
+  - OWM [decided to change](http://openweathermap.org/news/post/we-are-happy-announce-one-our-products-api-uv-index-has-got-significant-improvement) the syntax of API endpoint for fetching UV data and its format in a non-retrocompatible manner. This results into `UVIndex` object entity fields changing, as well as the corresponding OWM25 method signature (`owm25.uvindex_around_coords`).
 
 What's new in Release 2.6.1
 ---------------------------
