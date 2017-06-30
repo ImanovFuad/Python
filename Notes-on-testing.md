@@ -22,7 +22,7 @@ triggers unit tests execution on all Python platfoms that are supported by PyOWM
 Also, unit tests can be run with:
 
 ```shell
-$ pythonX.Y setup.py test -s tests.unit`
+$ pythonX.Y setup.py test -s tests.unit
 ```
 
 
