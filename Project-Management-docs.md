@@ -112,6 +112,7 @@ $ sudo apt-get install python3.2 python 3.3
    - push Docker image to DockerHub with: `cd scripts & bash publish_to_dockerhub.sh <x.y.z>`
    - generate pypi distributions with: `cd scripts & bash generate_pypi_dist.sh`
    - upload release on pypi: `cd scripts & bash publish_to_pypi.sh`
+   - test locally that installation via pip works: `bash tests/installation_test.sh`
  4. RELATED PROJECTS
    - check for domain entities changes and update Django models on [django-pyowm](https://github.com/csparpa/django-pyowm)
 
