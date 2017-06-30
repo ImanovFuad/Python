@@ -1,3 +1,29 @@
+What's new in Release 2.7.0
+---------------------------
+- New features:
+  - introduced support for Sulphur Dioxide (SO2) and Nitric Dioxide (NO2): new methods `owm25.no2index_around_coords` and `owm25.so2index_around_coords`
+  - implemented wind speed units specification (imperial/metric)
+
+
+- Bugfixes:
+  - updated weather history endpoint (was broken)
+  - fix bug about data parsing at `station_at_coords` and `weather_at_station` methods
+  - now the `deg` attribute is correctly parsed from 16 day forecast weather data items
+  - fix bug on printing Unicode upon library exceptions
+  - fix handling of `Weather` objects parsing (it was failing whenever some data wasn't provided by OWM)
+
+
+- Enhancements:
+  - shrinked city ID files size by 60% (via compression)
+  - reported in the Wiki [a list](https://github.com/csparpa/pyowm/wiki/Community-Projects-using-PyOWM) of known projects that use PyOWM
+  - integrated the [Say Thanks! hook](https://saythanks.io/to/csparpa)
+  - introduced `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` files, thus welcoming GitHub's suggested best practices for building better open source communities
+  - introduced installation tests
+  - improved integrations tests organization and running
+
+- **Breaking changes**:
+  - OWM decided to change the syntax of API endpoint for fetching UV data and its format in a non-retrocompatible manner. This results into `UVIndex` object entity fields changing, as well as the corresponding OWM25 method signature (`owm25.uvindex_around_coords`).
+
 What's new in Release 2.6.1
 ---------------------------
  * Bugfixes:
