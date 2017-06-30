@@ -1,4 +1,4 @@
-What's new in Release 2.7.0
+What's new in Release 2.7.1
 ---------------------------
 - New features:
   - introduced support for Sulphur Dioxide (SO2) and Nitric Dioxide (NO2): new methods `owm25.no2index_around_coords` and `owm25.so2index_around_coords`
