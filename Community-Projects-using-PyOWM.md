@@ -4,6 +4,7 @@ PyOWM is currently used by many cool projects, here are the most notable ones:
   - tutorial on the [Raspberry Pi Learning Resources site](https://www.raspberrypi.org/learning/microbit-meteorologist/)
   - Mycroft Artificial Intelligence System has a [Weather Skill](https://github.com/MycroftAI/skill-weather) based on PyOWM
   - the [Jarvis personal assistant for Linux](https://github.com/sukeesh/Jarvis)
+  - Mr.Surendran built a [bot to monitor his garden status](https://surendran.info/the-garden-bot/) - powered by Raspberry, Arduino and of course PyOWM
   - [hackaday.io project](https://hackaday.io/project/11064/log/37024-weather-forecast)
   - university student projects
      - http://pyweather.weebly.com
