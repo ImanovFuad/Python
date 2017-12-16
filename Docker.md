@@ -1,11 +1,11 @@
 # Ubuntu
 
-You can run a Docker container mounting the latest PyOWM release code with:
-```shell
-$ docker run -d --name pyowm csparpa/pyowm
-```
+Check on [DockerHub](https://hub.docker.com/r/csparpa/pyowm) the PyOWM images that are available
 
-(you can check on [DockerHub for older tags](https://hub.docker.com/r/csparpa/pyowm/tags))
+Choose the one you need, then run it with:
+```shell
+$ docker run -d --name pyowm <IMAGE-NAME>
+```
 
 The source code is under `/pyowm` inside the container.
 
