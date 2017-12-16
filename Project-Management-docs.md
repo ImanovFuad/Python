@@ -30,19 +30,11 @@ docker exec -ti pyowm tox
 
 ### Releasing on DockerHub
 
-Eg: for tagged version 2.3.1
-
+Push to DockerHub all images that have been buit
 ```shell
-VERSION="2.3.1"
-
-# Build and tag
-docker build -t csparpa/pyowm:${VERSION} .
-docker tag csparpa/pyowm:${VERSION} csparpa/pyowm:latest
-
 # Push to DockerHub
 # (if you get unauthorized error, use: docker login)
-docker push csparpa/pyowm:${VERSION}
-docker push csparpa/pyowm:latest
+docker push <image>
 ```
 
 <a name="dist_channels"></a>
