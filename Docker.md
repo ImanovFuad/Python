@@ -20,7 +20,7 @@ $ docker exec -ti pyowm bash -c 'pip install pyowm'
 
 Build a single image with its specific Dockerfile:
 ```shell
-docker build  . -f dockerfiles/Dockerfile.alpine-py2 -t csparpa/pyowm.alpine-py2
+docker build  . -f Dockerfile.alpine-py2 -t csparpa/pyowm.alpine-py2
 ```
 
 Or build all dockerfiles:
