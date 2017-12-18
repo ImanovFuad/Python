@@ -10,16 +10,16 @@
 <a name="docker_img"></a>
 ## Build and push Docker image
 
-Build the image with:
+Build the Docker images with:
 
 ```shell
-cd <pyowm-root-dir>
-docker build -t pyowm:latest .
+cd <pyowm-root-dir>/scripts
+bash generate_docker_images.sh
 ```
 
 Start containers with:
 ```shell
-docker run -d --name pyowm pyowm
+docker run -d --name pyowm <image-name>
 ```
 
 Run Tox tests on containers
@@ -32,9 +32,9 @@ docker exec -ti pyowm tox
 
 Push to DockerHub all images that have been buit
 ```shell
-# Push to DockerHub
+cd <pyowm-root-dir>/scripts
 # (if you get unauthorized error, use: docker login)
-docker push <image>
+bash publish_to_dockerhub.sh
 ```
 
 <a name="dist_channels"></a>
