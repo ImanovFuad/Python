@@ -1,3 +1,22 @@
+What's new in Release 2.8.0
+---------------------------
+- New features:
+  - introduced support for [Stations API 3.0](https://github.com/csparpa/pyowm/blob/master/pyowm/docs/stations-api-usage-examples.md)
+  - new methods for `Forecaster` class: `will_have_clear`, `when_clear`, `will_be_clear_at`
+  - new light Docker images based on Alpine Linux
+
+- Enhancements:
+  - In the moment `Forecast` objects are created, their `Weather` objects having reference timestamps prior to that moment are discarded (this means: you only get *real* forecasts!)
+  - Introduced `requests` as only PyOWM dependency: `requests>=2.18.2,<2.19`
+
+- Bugfixes:
+  - issue on `city_id_registry` read behaviour on Windows
+  - issue on parsing `Location` objects
+
+- Deprecations introduced:
+   - will be removed on 3.0.0: `forecaster.Forecaster.will_have_sun`, `forecaster.Forecaster.when_sun` and `forecaster.Forecaster.will_be_sunny_at`
+
+
 What's new in Release 2.7.1
 ---------------------------
 - New features:
