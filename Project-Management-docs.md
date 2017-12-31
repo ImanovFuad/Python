@@ -66,7 +66,7 @@ Clone the wiki as a submodule by running: `git submodule update --init`
 ## Installing multiple Python versions
 On Ubuntu:
 ```shell
-$ sudo apt-add-repository ppa:fkrull/deadsnakes
+$ sudo apt-add-repository ppa:deadsnakes/ppa
 $ sudo apt-get update
 $ sudo apt-get install python3.2 python 3.3
 ```
