@@ -29,19 +29,18 @@ DELETE http://api.openweathermap.org/data/3.0/triggers/{id}/history/{alert_id}
 
 This is the descending object model:
 
-  - Trigger: collection of alerts to be met over specified areas and within a specified time frame according to specified weather params conditions
-  - Condition: rule for matching a weather measuerment with a specified threshold
-  - Alert: whenever a condition is met, an alert is created (or updated) and can be polled to verify when it has been met and what the actual weather param value was.
-  - Area: geographic area over which the trigger is checked
-  - AlertChannel: as OWM plans to add push-oriented alert channels (eg. push notifications), we need to encapsulate this into a specific class
+  - *Trigger*: collection of alerts to be met over specified areas and within a specified time frame according to specified weather params conditions
+  - *Condition*: rule for matching a weather measuerment with a specified threshold
+  - *Alert*: whenever a condition is met, an alert is created (or updated) and can be polled to verify when it has been met and what the actual weather param value was.
+  - *Area*: geographic area over which the trigger is checked
+  - *AlertChannel*: as OWM plans to add push-oriented alert channels (eg. push notifications), we need to encapsulate this into a specific class
 
 ## Area
 
 Attributes:
   - coordinates: list of lists (each sublist representing a point)
 
-Subtypes: Can be point, multipoint, polygon, multipolygon.
-Topology is set out as stated by GeoJSON.
+Subtypes: Can be point, multipoint, polygon, multipolygon. Topology is set out as stated by GeoJSON.
 
 It could be useful to forge a factory for Areas, based on eg. a library such as this one https://pypi.org/project/geojson/
 
@@ -62,10 +61,17 @@ As Conditions can be only set on a limited number of meteo variables and can be 
 
 Attributes:
   - id: unique alert identifier
+  - triggerId: link back to parent Trigger
   - list of dict ("alert fires"): each one reports a link to a parent's Condition obj and the current values that made the Alert fire
   - last_update: last time when the alert was updated because a condition was met
   - date: "time of the measurement meeting trigger conditions" (???)
   - coordinates: object representing the coordinates where the condition were met
+
+As one needs to poll for alerts being fired, it would be nice if PyOWM provided utilities to understand eg.
+  - given a timestamp in the past and a named trigger, what alerts have been fired from that timestamp up to now (that would be super-useful for polling)
+  - filter historic alert firing based on monitored meteo variable (eg. temperature, etc.)
+  - filter historic alert firing based on inclusion of its conditions in specific geographic areas
+  - more (TBD)
 
 ## Trigger
 
@@ -74,7 +80,8 @@ Attributes:
   - end: epoch when the trigger ends
   - alerts: list of Alert objects
   - conditions: list of Condition objects
-  - area: an Area object
+  - area: dict representing the topology where to check conditions on
+  - alertChannels: list of AlertChannel objects
 
 ## AlertChannel
 We don't know anything about it yet. Possibly, when you will setup a trigger you shall also specify the channels you want to be notified on: that's why it would be better to add pointer to a list of alert channels directly on the Trigger objects (the list can be empty for now)
