@@ -48,10 +48,10 @@ It could be useful to forge a factory for Areas, based on eg. a library such as 
 ## Condition
 
 Attributes:
+  - id: str, unique condition identifier
   - target_param: weather parameters to be checked. Can be: temp, pressure, humidity, wind_speed, wind_direction, clouds.
-  - expression: operator for the comparison. Can be: $gt, $gte, $lt, $lte, $eq, $ne
-  - amount: the comparison value
-  - current_value: if the condition is "live", this contains the last checked measured value for the target_param
+  - expression: str, operator for the comparison. Can be: $gt, $gte, $lt, $lte, $eq, $ne
+  - amount: number, the comparison value
 
 Conditions should be bound to Triggers, as they are set on Trigger instantiation.
 
@@ -60,12 +60,12 @@ As Conditions can be only set on a limited number of meteo variables and can be 
 ## Alert
 
 Attributes:
-  - id: unique alert identifier
-  - triggerId: link back to parent Trigger
-  - list of dict ("alert fires"): each one reports a link to a parent's Condition obj and the current values that made the Alert fire
-  - last_update: last time when the alert was updated because a condition was met
-  - date: "time of the measurement meeting trigger conditions" (???)
-  - coordinates: object representing the coordinates where the condition were met
+  - id: str, unique alert identifier
+  - trigger_id: str, link back to parent Trigger
+  - fires: list of dict, each one reports a link to a parent's Condition obj and the current values that made the Alert fire
+  - last_update: big int (UNIX), last time when the alert was updated because a condition was met
+  - date: big int (UNIX), "time of the measurement meeting trigger conditions" (???)
+  - coordinates: dict representing the coordinates where the condition were met
 
 As one needs to poll for alerts being fired, it would be nice if PyOWM provided utilities to understand eg.
   - given a timestamp in the past and a named trigger, what alerts have been fired from that timestamp up to now (that would be super-useful for polling)
