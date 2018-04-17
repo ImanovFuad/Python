@@ -79,7 +79,7 @@ Attributes:
   - end: epoch when the trigger ends
   - alerts: list of Alert objects
   - conditions: list of Condition objects
-  - area: dict representing the topology where to check conditions on
+  - area: list of dicts, each one representing a geoJSON data structure
   - alertChannels: list of AlertChannel objects
 
 *Notes on time period*:
@@ -106,3 +106,47 @@ Example 2 (using the *$exact*) operator:
 
 ## AlertChannel
 We don't know anything about it yet. Possibly, when you will setup a trigger you shall also specify the channels you want to be notified on: that's why it would be better to add pointer to a list of alert channels directly on the Trigger objects (the list can be empty for now)
+
+# High level PyOWM API for Weather alerts
+
+```pyowm
+from pyowm import OWM
+from pyowm.utils import geo, alerting
+
+owm = OWM(API_Key='blablabla')
+am = owm.alert_manager()
+
+# area
+geom_1 = geo.Point(lat, lon)  # available types: Point, MultiPoint, Polygon, MultiPolygon
+'''
+{
+  "type": "Point",
+  "coordinates":[ lat, lon ]
+}
+'''
+geom_2 = geo.MultiPolygon([[lat1, lon1], [lat2, lon2], [lat3, lon3], [lat1, lon1]]
+                          [[lat7, lon7], [lat8, lon8], [lat9, lon9], [lat7, lon7]]
+)
+list_of_geoms = [geom_1, geom_2]
+
+
+# condition
+condition_1 = alerting.when_temp().greater_than(313.15)  # kelvin
+condition_2 = alerting.when_clouds().equals(80)          # clouds % coverage
+
+# triggers
+trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=list_of_geoms, alert_channel=None)
+triggers_list = am.get_triggers()
+trigger_2 = am.get_trigger('trigger_id')
+am.modify_trigger(trigger_2)
+am.delete_trigger(trigger_2)
+
+# alerts
+alerts_list = trigger.get_alerts()
+alert = trigger.get_alert('alert_id')
+alert.last_fired_on    # 2018-03-14T15:07:18Z
+alert.last_fire_value  # 45.7
+trigger.delete_all_alerts()
+trigger.delete_alert('alert_id')
+
+```
