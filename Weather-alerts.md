@@ -109,7 +109,7 @@ We don't know anything about it yet. Possibly, when you will setup a trigger you
 
 # High level PyOWM API for Weather alerts
 
-```pyowm
+```python
 from pyowm import OWM
 from pyowm.utils import geo, alerting
 
