@@ -43,7 +43,7 @@ Attributes:
 Subtypes: Can be point, multipoint, polygon, multipolygon.
 Topology is set out as stated by GeoJSON.
 
-It could be useful to forge a factory for Areas (GeoJSON parser)
+It could be useful to forge a factory for Areas, based on eg. a library such as this one https://pypi.org/project/geojson/
 
 
 ## Condition
