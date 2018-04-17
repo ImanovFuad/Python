@@ -62,9 +62,8 @@ As Conditions can be only set on a limited number of meteo variables and can be 
 Attributes:
   - id: str, unique alert identifier
   - trigger_id: str, link back to parent Trigger
-  - fires: list of dict, each one reports a link to a parent's Condition obj and the current values that made the Alert fire
-  - last_update: big int (UNIX), last time when the alert was updated because a condition was met
-  - date: big int (UNIX), "time of the measurement meeting trigger conditions" (???)
+  - met_conditions: list of dict, each one reports a link to a parent's Condition obj and the current values that made the Alert fire
+  - last_update: epoch, last time when the alert has been fired
   - coordinates: dict representing the coordinates where the condition were met
 
 As one needs to poll for alerts being fired, it would be nice if PyOWM provided utilities to understand eg.
@@ -82,6 +81,28 @@ Attributes:
   - conditions: list of Condition objects
   - area: dict representing the topology where to check conditions on
   - alertChannels: list of AlertChannel objects
+
+*Notes on time period*:
+As per OWM documentation, *start* and *end* times are expressed with respect to the moment when you create/update the Trigger
+
+Example 1 (using the *$after*) operator:
+
+```
+  API call                 start                           end
+(validation)           $after amount                  $after amount
+     X---------------------- X -----------------------------X------------>
+```
+
+Example 2 (using the *$exact*) operator:
+
+```
+  API call                 start                           end
+(validation)           $exact amount                  $exact amount
+     X---------------------- X -----------------------------X------------>
+```
+
+**By design, PyOWM will only allow users to specify absolute datetimes for start/end and will send them to the API using $exact**
+
 
 ## AlertChannel
 We don't know anything about it yet. Possibly, when you will setup a trigger you shall also specify the channels you want to be notified on: that's why it would be better to add pointer to a list of alert channels directly on the Trigger objects (the list can be empty for now)
