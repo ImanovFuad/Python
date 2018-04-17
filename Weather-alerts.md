@@ -53,12 +53,15 @@ Attributes:
   - amount: the comparison value
   - current_value: if the condition is "live", this contains the last checked measured value for the target_param
 
+Conditions should be bound to Triggers, as they are set on Trigger instantiation.
+
+As Conditions can be only set on a limited number of meteo variables and can be expressed only through a closed set of value comparison operators, a factory (with eg. internal enumerators) is envisioned here.
 
 ## Alert
 
 Attributes:
   - id: unique alert identifier
-  - list of Condition objects
+  - list of dict ("alert fires"): each one reports a link to a parent's Condition obj and the current values that made the Alert fire
   - last_update: last time when the alert was updated because a condition was met
   - date: "time of the measurement meeting trigger conditions" (???)
   - coordinates: object representing the coordinates where the condition were met
@@ -71,3 +74,6 @@ Attributes:
   - alerts: list of Alert objects
   - conditions: list of Condition objects
   - area: an Area object
+
+## AlertChannel
+We don't know anything about it yet. Possibly, when you will setup a trigger you shall also specify the channels you want to be notified on: that's why it would be better to add pointer to a list of alert channels directly on the Trigger objects (the list can be empty for now)
