@@ -1,3 +1,5 @@
+**[This page to be removed]**
+
 You can query the OWM API for Ozone measurements in the surroundings of specific geocoordinates.
 
 Please refer to the official API docs for [O3](http://openweathermap.org/api/pollution/v1/o3) data consumption for details about how the search radius is influenced by the decimal digits on the provided lat/lon values.
