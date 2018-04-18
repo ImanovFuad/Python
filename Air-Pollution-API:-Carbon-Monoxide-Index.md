@@ -1,3 +1,5 @@
+**[This page to be removed]**
+
 You can query the OWM API for Carbon Monoxide (CO) measurements in the surroundings of specific geocoordinates.
 
 Please refer to the official API docs for [CO](http://openweathermap.org/api/pollution/v1/co) data consumption for details about how the search radius is influenced by the decimal digits on the provided lat/lon values.
