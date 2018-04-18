@@ -5,8 +5,7 @@ https://github.com/csparpa/pyowm/blob/master/pyowm/docs/uv-api-usage-examples.md
 
 ***
 
-
-
+**[This section to be removed]**
 
 You can query the OWM API for current Ultra Violet (UV) intensity data in the surroundings of
 specific geocoordinates.
