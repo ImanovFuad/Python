@@ -129,6 +129,12 @@ geom_2 = geo.MultiPolygon([[lat1, lon1], [lat2, lon2], [lat3, lon3], [lat1, lon1
 )
 list_of_geoms = [geom_1, geom_2]
 
+# a very nice feature: look for city ID and get its corresponding geopoint!
+reg = owm.city_id_registry()
+geoms = reg.geopoints_for('London', country='GB')
+
+# ... also, add to Location class a get_geopoint() method that returns GeoJSON
+
 
 # condition
 condition_1 = alerting.when_temp().greater_than(313.15)  # kelvin
