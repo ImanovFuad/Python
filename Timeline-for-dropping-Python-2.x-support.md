@@ -13,9 +13,10 @@ The PyOWM project has a *plan to gradually transition 2.x support to that date*
 If you will try to update PyOWM from a release < 2.9 to the latest available - say, via `pip` - you will get release 2.9 even if higher releases will be available (as these will only support Python 3.x)
 
 ### Q: I use Python 2.x and will need to install PyOWM from scratch with a release higher than 2.9
-That will be impossible: on Python 2.x platforms you will only be able to get PyOWM releases up to 2.9. If you then want to install the `v2.9-LTS` branch code updates, you will need to do this manually by:
-  - git cloning the `v2.9-LTS` branch
-  - running `setup.py`
+That will be impossible: on Python 2.x platforms you will only be able to get PyOWM releases up to 2.9. If you then want to install the `v2.9-LTS` branch code updates, you will need to do this manually by running
+```
+$ pip install git+https://github.com/csparpa/pyowm.git@v2.9-LTS
+```
 
 ### Q: I use Python 3.x, do I have to worry?
 You wont' have any issue: 🌞 shines in the sky
@@ -30,7 +31,7 @@ Release 2.9 will benefit of a "Long Term Support" (LTS) for
 
 Upon release 2.9 a new branch called **`v2.9-LTS`** will be created from the master branch, and the above mentioned fixes will be then applied on such a branch
 
-The `v2.9-LTS` branch **will not embed any new feature** and **will not be released to PyPi** (it will only be installable via git clone + `setup.py`).
+The `v2.9-LTS` branch **will not embed any new feature** and **will not be released to PyPi** (it will only be installable via `pip install git+https://github.com/csparpa/pyowm.git@v2.9-LTS` or git clone + `setup.py`).
 
 The `v2.9-LTS` branch will be operated **until January, 1st 2020**. After that date, a **tag** will be made out of the branch and the branch will be closed, *therefore ending Python 2.x support forever*
 
