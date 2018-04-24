@@ -118,6 +118,7 @@ am = owm.alert_manager()
 
 # area
 geom_1 = geo.Point(lat, lon)  # available types: Point, MultiPoint, Polygon, MultiPolygon
+geom_1.geojson()
 '''
 {
   "type": "Point",
@@ -125,8 +126,7 @@ geom_1 = geo.Point(lat, lon)  # available types: Point, MultiPoint, Polygon, Mul
 }
 '''
 geom_2 = geo.MultiPolygon([[lat1, lon1], [lat2, lon2], [lat3, lon3], [lat1, lon1]]
-                          [[lat7, lon7], [lat8, lon8], [lat9, lon9], [lat7, lon7]]
-)
+                          [[lat7, lon7], [lat8, lon8], [lat9, lon9], [lat7, lon7]])
 list_of_geoms = [geom_1, geom_2]
 
 # a very nice feature: look for city ID and get its corresponding geopoint!
