@@ -117,23 +117,22 @@ owm = OWM(API_Key='blablabla')
 am = owm.alert_manager()
 
 # area
-geom_1 = geo.Point(lat, lon)  # available types: Point, MultiPoint, Polygon, MultiPolygon
+geom_1 = geo.Point(lon, lat)  # available types: Point, MultiPoint, Polygon, MultiPolygon
 geom_1.geojson()
 '''
 {
   "type": "Point",
-  "coordinates":[ lat, lon ]
+  "coordinates":[ lon, lat ]
 }
 '''
-geom_2 = geo.MultiPolygon([[lat1, lon1], [lat2, lon2], [lat3, lon3], [lat1, lon1]]
-                          [[lat7, lon7], [lat8, lon8], [lat9, lon9], [lat7, lon7]])
-list_of_geoms = [geom_1, geom_2]
+geom_2 = geo.MultiPolygon([[lon1, lat1], [lon2, lat2], [lon3, lat3], [lon1, lat1]]
+                          [[lon7, lat7], [lon8, lat8], [lon9, lat9], [lon7, lat7]])
 
 # a very nice feature: look for city ID and get its corresponding geopoint!
 reg = owm.city_id_registry()
 geoms = reg.geopoints_for('London', country='GB')
 
-# ... also, add to Location class a get_geopoint() method that returns GeoJSON
+# ... also, add to Location class a .geopoint() method that returns a geo.Point instance
 
 
 # condition
@@ -141,7 +140,7 @@ condition_1 = alerting.when_temp().greater_than(313.15)  # kelvin
 condition_2 = alerting.when_clouds().equals(80)          # clouds % coverage
 
 # triggers
-trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=list_of_geoms, alert_channel=None)
+trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=[geom_1, geom_2], alert_channel=None)
 triggers_list = am.get_triggers()
 trigger_2 = am.get_trigger('trigger_id')
 am.modify_trigger(trigger_2)
