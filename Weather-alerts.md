@@ -132,7 +132,7 @@ geom_2 = geo.MultiPolygon([[lon1, lat1], [lon2, lat2], [lon3, lat3], [lon1, lat1
 reg = owm.city_id_registry()
 geoms = reg.geopoints_for('London', country='GB')
 
-# ... also, add to Location class a .geopoint() method that returns a geo.Point instance
+# ... also, add to Location class a .to_geopoint() method that returns a geo.Point instance
 
 
 # condition
