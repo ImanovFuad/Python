@@ -136,8 +136,8 @@ geoms = reg.geopoints_for('London', country='GB')
 
 
 # condition
-condition_1 = alerting.when_temp().greater_than(313.15)  # kelvin
-condition_2 = alerting.when_clouds().equals(80)          # clouds % coverage
+condition_1 = alerting.Condition('TEMPERATURE', 'GREATER_THAN', 313.15)  # kelvin
+condition_2 = alerting.Condition('CLOUDS','EQUAL', 80)                   # clouds % coverage
 
 # triggers
 trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=[geom_1, geom_2], alert_channel=None)
