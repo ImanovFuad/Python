@@ -140,7 +140,7 @@ condition_1 = alerting.Condition('TEMPERATURE', 'GREATER_THAN', 313.15)  # kelvi
 condition_2 = alerting.Condition('CLOUDS','EQUAL', 80)                   # clouds % coverage
 
 # triggers
-trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=[geom_1, geom_2], alert_channel=None)
+trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=[geom_1, geom_2], alert_channel=AlertChannelsEnum.OWM_API)
 triggers_list = am.get_triggers()
 trigger_2 = am.get_trigger('trigger_id')
 am.modify_trigger(trigger_2)
