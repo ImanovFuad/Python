@@ -146,12 +146,14 @@ trigger_2 = am.get_trigger('trigger_id')
 am.modify_trigger(trigger_2)
 am.delete_trigger(trigger_2)
 
+am.refresh_trigger(trigger)
+
 # alerts
 alerts_list = trigger.get_alerts()
 alert = trigger.get_alert('alert_id')
 alert.last_fired_on    # 2018-03-14T15:07:18Z
 alert.last_fire_value  # 45.7
-trigger.delete_all_alerts()
-trigger.delete_alert('alert_id')
+am.delete_all_alerts_for(trigger)
+am.delete_alert_for(trigger, alert)
 
 ```
