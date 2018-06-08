@@ -151,9 +151,6 @@ alerts_list = trigger.get_alerts_since('2018-01-09T23:07:24Z')  # useful for pol
 alerts_list = trigger.get_alerts_on(WeatherParametersEnum.TEMPERATURE)
 alert = trigger.get_alert('alert_id')
 
-alert.last_fired_on       # 2018-03-14T15:07:18Z
-alert.last_condition_met = alert.last_condition_met  # {'current_value': 263.6, 'condition': <Condition_obj>}
-
 am.delete_all_alerts_for(trigger)
 am.delete_alert_for(trigger, alert)
 ```
