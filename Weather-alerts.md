@@ -66,12 +66,6 @@ Attributes:
   - last_update: epoch, last time when the alert has been fired
   - coordinates: dict representing the coordinates where the condition were met
 
-As one needs to poll for alerts being fired, it would be nice if PyOWM provided utilities to understand eg.
-  - given a timestamp in the past and a named trigger, what alerts have been fired from that timestamp up to now (that would be super-useful for polling)
-  - filter historic alert firing based on monitored meteo variable (eg. temperature, etc.)
-  - filter historic alert firing based on inclusion of its conditions in specific geographic areas
-  - more (TBD)
-
 ## Trigger
 
 Attributes:
@@ -111,7 +105,10 @@ We don't know anything about it yet. Possibly, when you will setup a trigger you
 
 ```python
 from pyowm import OWM
-from pyowm.utils import geo, alerting
+from pyowm.utils import geo
+from pyowm.alertingapi30.enums import WeatherParametersEnum
+from pyowm.alertingapi30.trigger import Trigger
+from pyowm.alertingapi30.alert import Alert
 
 owm = OWM(API_Key='blablabla')
 am = owm.alert_manager()
@@ -150,10 +147,18 @@ am.refresh_trigger(trigger)
 
 # alerts
 alerts_list = trigger.get_alerts()
+alerts_list = trigger.get_alerts_since('2018-01-09T23:07:24Z')  # useful for polling alerts
+alerts_list = trigger.get_alerts_on(WeatherParametersEnum.TEMPERATURE)
 alert = trigger.get_alert('alert_id')
+
 alert.last_fired_on    # 2018-03-14T15:07:18Z
 alert.last_fire_value  # 45.7
+
 am.delete_all_alerts_for(trigger)
 am.delete_alert_for(trigger, alert)
+
+# utilities
+filter historic alert firing based on monitored meteo variable (eg. temperature, etc.)
+
 
 ```
