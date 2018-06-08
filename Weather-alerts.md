@@ -156,9 +156,4 @@ alert.last_fire_value  # 45.7
 
 am.delete_all_alerts_for(trigger)
 am.delete_alert_for(trigger, alert)
-
-# utilities
-filter historic alert firing based on monitored meteo variable (eg. temperature, etc.)
-
-
 ```
