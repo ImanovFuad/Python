@@ -106,9 +106,9 @@ We don't know anything about it yet. Possibly, when you will setup a trigger you
 ```python
 from pyowm import OWM
 from pyowm.utils import geo
-from pyowm.alertingapi30.enums import WeatherParametersEnum
-from pyowm.alertingapi30.trigger import Trigger
-from pyowm.alertingapi30.alert import Alert
+from pyowm.alertapi30.enums import WeatherParametersEnum
+from pyowm.alertapi30.trigger import Trigger
+from pyowm.alertapi30.alert import Alert
 
 owm = OWM(API_Key='blablabla')
 am = owm.alert_manager()
@@ -140,7 +140,7 @@ condition_2 = alerting.Condition('CLOUDS','EQUAL', 80)                   # cloud
 trigger = am.create_trigger(start_ts=1234567890, end_ts=1278654300, conditions=[condition_1, condition_2], area=[geom_1, geom_2], alert_channel=AlertChannelsEnum.OWM_API)
 triggers_list = am.get_triggers()
 trigger_2 = am.get_trigger('trigger_id')
-am.modify_trigger(trigger_2)
+am.update_trigger(trigger_2)
 am.delete_trigger(trigger_2)
 
 am.refresh_trigger(trigger)
