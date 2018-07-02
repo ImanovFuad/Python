@@ -143,13 +143,15 @@ trigger_2 = am.get_trigger('trigger_id')
 am.update_trigger(trigger_2)
 am.delete_trigger(trigger_2)
 
-am.refresh_trigger_alerts(trigger)
-
-# alerts
+# alerts (retrieved from the local parent Trigger obj)
 alerts_list = trigger.get_alerts()
 alerts_list = trigger.get_alerts_since('2018-01-09T23:07:24Z')  # useful for polling alerts
 alerts_list = trigger.get_alerts_on(WeatherParametersEnum.TEMPERATURE)
 alert = trigger.get_alert('alert_id')
+
+# alerts (retrieved from the remote API)
+alerts_list_alternate = am.get_alerts_for(trigger)
+alert_alternate = am.get_alert('alert_id')
 
 am.delete_all_alerts_for(trigger)
 am.delete_alert_for(trigger, alert)
