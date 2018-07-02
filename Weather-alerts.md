@@ -143,7 +143,7 @@ trigger_2 = am.get_trigger('trigger_id')
 am.update_trigger(trigger_2)
 am.delete_trigger(trigger_2)
 
-am.refresh_trigger(trigger)
+am.refresh_trigger_alerts(trigger)
 
 # alerts
 alerts_list = trigger.get_alerts()
