@@ -5,9 +5,10 @@
 Warnings:
   - Support for **2.x** will eventually be [dropped](https://github.com/csparpa/pyowm/wiki/Timeline-for-dropping-Python-2.x-support)
 
-## Supported OpenWeatherMap products
+## Supported OpenWeatherMap APIs:
  - Weather API v2.5
- - Pollution API v3.0
+ - Air Pollution API v3.0
+ - UV Index API v3.0
  - Stations API v3.0
  - Weather Alerts API v3.0
 
