@@ -22,4 +22,4 @@ Moreover, PyOWM is mentioned in tons of **Internet blog posts** written by Raspb
 
 # Commercial projects using PyOWM
 
-  - PyOWM is used (and taught!) in one of the paid-what-you-want courses on [Next.xyz](https://www.next.xyz/public/course/python-open-weather-map)
+  - PyOWM is used (and taught!) in one of the pay-what-you-want courses on [Next.xyz](https://www.next.xyz/public/course/python-open-weather-map)
