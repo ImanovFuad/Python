@@ -2,9 +2,10 @@
 
 You can use the OWM API to create triggers, each trigger represents the check if a set of conditions are met over certain weather parameter values over certain geographic areas are met. An alert is created for each condition and you can poll the API to check if and when the alerts are met.
 
-# OWM website reference
+# OWM website references
  - https://openweathermap.org/triggers
  - http://openweathermap.org/triggers-struct
+ - https://medium.com/@openweathermap/the-weather-alerts-on-base-on-meteorological-data-f99cd8cb2e25
 
 # API methods
 
