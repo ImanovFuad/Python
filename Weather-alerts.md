@@ -96,7 +96,14 @@ Example 2 (using the *$exact*) operator:
      X---------------------- X -----------------------------X------------>
 ```
 
-**By design, PyOWM will only allow users to specify absolute datetimes for start/end and will send them to the API using $exact**
+**By design, PyOWM will only allow users to specify absolute datetimes for start/end and will send them to the API using $after**
+
+Therefore whenever given [t_start, t_end] absolute datetime/epoch values, and given the current datetime/epoch t_curr, PyOWM shall:
+
+  1. check if t_start and t_end are not in the past; then check that t_end > t_start
+  2. calculate `start = t_start - t_curr` (in milliseconds)
+  3. calculate `end = t_end - t_curr` (in milliseconds)
+  4. send `start` and `end` values to the Alert API
 
 
 ## AlertChannel
