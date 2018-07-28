@@ -4,15 +4,15 @@ The PyOWM project has a *plan to gradually transition 2.x support to that date*
 
 # tl;dr
 
-### Q: I use Python 2.x, do I have to worry?
+### I use Python 2.x, do I have to worry?
   - You're OK with PyOWM **until release 2.9**
   - You will get 2.x bugfixes implemented until January, 1st 2020 and you will be able to obtain them by installing the ad-hoc `v2.9-LTS` branch
   - **From release 2.10 on, PyOWM will only work on Python 3.x**
 
-### Q: I use Python 2.x and I usually update PyOWM to the latest available release?
+### I use Python 2.x and I usually update PyOWM to the latest available release
 If you will try to update PyOWM from a release < 2.9 to the latest available - say, via `pip` - you will get release 2.9 even if higher releases will be available (as these will only support Python 3.x)
 
-### Q: I use Python 2.x and will need to install PyOWM from scratch with a release higher than 2.9
+### I use Python 2.x and will need to install PyOWM from scratch with a release higher than 2.9
 That will be impossible: on Python 2.x platforms you will only be able to get PyOWM releases up to 2.9. If you then want to install the `v2.9-LTS` branch code updates, you will need to do this manually by running
 ```
 $ pip install git+https://github.com/csparpa/pyowm.git@v2.9-LTS
