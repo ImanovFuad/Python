@@ -1,6 +1,6 @@
 ## Supported Python versions
   - 3.4, 3.5, 3.6, 3.7 by default
-  - 2.7 only on the `v2.9-LTS` branch
+  - 2.7 only on the [v2.9-LTS](https://github.com/csparpa/pyowm/tree/v2.9-LTS) branch
 
 Warnings:
   - Support for **2.x** will eventually be [dropped](https://github.com/csparpa/pyowm/wiki/Timeline-for-dropping-Python-2.x-support)
