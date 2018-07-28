@@ -36,6 +36,11 @@ and then you can run the integration tests with:
     $ cd tests/integration
     $ tox
 
+or - on Linux - use the test runner:
+
+    $ cd scripts
+    $ bash run_integration_tests.sh
+
 Please note that depending on your subscription type some of the tests may be neglected, eg: if you have a free subscription tier, the test cases that invoke the OWM API to get historical weather data will fail as these data can only be retrieved using a paid account.
 
 ## Testing using Docker
