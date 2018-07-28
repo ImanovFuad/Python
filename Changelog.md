@@ -1,3 +1,34 @@
+What's new in Release 2.9.0
+---------------------------
+**Python 2.7 is now officially deprecated**
+
+Bugfixing support for it will be granted on the dedicated `v2.9-LTS` branch that will be killed off on Jan 1st, 2020
+
+Please check out the [drop timeline](https://github.com/csparpa/pyowm/wiki/Timeline-for-dropping-Python-2.x-support) for details. 
+
+- New features:
+  - Support for [Weather Alerts](https://openweathermap.org/triggers)
+  - Support for [UV Index Forecast and History](http://openweathermap.org/api/uvi)
+  - Logos for the project have been introduced! :)
+  - Support for Python 3.7
+  - Support for [Pipfile](https://github.com/pypa/pipfile)
+
+
+- Enhancements:
+  - Heavily improved readthedocs documentation
+  - Now PyOWM talks to OWM APIs over SSL
+  - Refactored out one single consistent HTTP base client, based on [requests](http://docs.python-requests.org/en/master/)
+  - Refactored UV API and Air Pollution API code to dedicated packages
+
+
+- Bugfixes:
+  - issue on `requests==2.19.1` incompatibility
+  - now printing on console the detailed weather status (language-sensitive) instead of generic english-based weather status
+  - fixed broken links in a few Markdown docs
+
+- Deprecations introduced:
+   - will be removed on 3.0.0: `OWM25.weather_at_stations_in_bbox`, `OWM25.weather_at_station`
+
 What's new in Release 2.8.0
 ---------------------------
 - New features:
