@@ -84,7 +84,7 @@ $ sudo apt-get install python3.2 python 3.3
 ### Checklist
  1. CODE
    - update version on constants.py
-   - update setup.py
+   - update setup.py and Pipfile
    - update city ID files with: `cd scripts & python generate_city_id_files.py ../pyowm/webapi25/cityids` - then check outputs --> and don't forget to gzip them!
    - update README.md
    - update technical docs in `docs` folder
