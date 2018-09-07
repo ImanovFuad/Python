@@ -9,7 +9,7 @@ PyOWM is currently used by many cool projects, here are the most notable ones
   - **Bots!**
      - Chatbots for [Facebook](http://blog.apcelent.com/create-a-facebook-messenger-bot-with-python-flask.html) and [Telegram](https://chatbotslife.com/tutorial-creating-a-basic-weather-chatbot-fb80248941b9) platforms
      - Mr.Surendran built a [bot to monitor his garden status](https://surendran.info/the-garden-bot/) - powered by Raspberry, Arduino and of course PyOWM
-  - Mr. Saad built an [**E-Paper Calendar** with iCal and live-weather](https://github.com/aceisace/E-Paper-Calendar-with-iCal-sync-and-live-weather/tree/master/Calendar) powered by Raspberry
+  - Mr. Saad built an [**E-Paper Calendar** with iCal and live-weather](https://github.com/aceisace/E-Paper-Calendar-with-iCal-sync-and-live-weather) powered by Raspberry
   - **hackaday.io** projects
      - https://hackaday.io/project/11064/log/37024-weather-forecast
      - https://www.hackster.io/fwrawx/raspberry-pi-clock-with-temperature-b267fe
