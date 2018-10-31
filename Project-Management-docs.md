@@ -110,6 +110,17 @@ $ sudo apt-get install python3.2 python 3.3
 
 ### Detailed steps
 
+### Update Pipfile.lock
+Use a virtualenv:
+
+    $ cd && make virtualenv pipfilelocker
+    $ source pipfilelocker/bin/activate
+    $ pip install pipenv
+    $ cd <path-to-pyowm-folder>
+    $ pipenv lock
+    $ deactivate                   # deactivate venv
+    $ cd && rm -rf pipfilelocker   # remove venv
+
 ### Build documentation
 First install Sphinx:
 
