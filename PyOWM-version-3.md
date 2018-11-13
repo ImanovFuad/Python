@@ -22,4 +22,5 @@ This is meant to be a **feature manifest** for PyOWM version 3
 - dict configuration
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
+- installable on Linux also via `apt` and `rpm`
 
