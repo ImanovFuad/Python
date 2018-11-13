@@ -29,4 +29,4 @@ This is meant to be a **feature manifest** for PyOWM version 3
 - removes JSON dumps for entities (only Python dict dumps will be allowed)
 - remove all Java style getter methods (eg. `get_temperature`), so to allow Pythonic access to obj attributes
 - all entities shall have methods: `__repr__`, `from_dict`, `to_dict`
-
+- do we really need parsers when we have `from_dict` methods??? If not, these can be dropped
