@@ -16,7 +16,7 @@ This is meant to be a **feature manifest** for PyOWM version 3
 
 ## Supported Python versions
 - drops legacy support for Python2 and support for Python 3.4
-- supports py35, py36, py37, py38
+- supports py35, py36, py37, **py38**
 
 ## Global library features
 - dict configuration
