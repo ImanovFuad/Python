@@ -24,3 +24,6 @@ This is meant to be a **feature manifest** for PyOWM version 3
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
 
+## Diffs with respect v2
+- removes XML schemas and XML dumps for entities
+
