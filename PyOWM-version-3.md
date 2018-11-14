@@ -1,4 +1,10 @@
-This is meant to be a **feature manifest** for PyOWM version 3
+This is meant to be a **manifest** for PyOWM version 3
+
+## Community interactions
+- Ask the community to prioritize new v3 features
+- Ask the community to propose new features for v3
+- Ask the community help with development of support for paid OWM APIs features
+
 
 ## Supported OWM APIs
 - Agro APIs
@@ -12,7 +18,6 @@ This is meant to be a **feature manifest** for PyOWM version 3
 - Air Pollution API
 - Weather Alerts API
 - Map tiles
-
 
 ## Supported Python versions
 - drops legacy support for Python2 and support for Python 3.4
@@ -30,3 +35,4 @@ This is meant to be a **feature manifest** for PyOWM version 3
 - remove all Java style getter methods (eg. `get_temperature`), so to allow Pythonic access to obj attributes
 - all entities shall have methods: `__repr__`, `from_dict`, `to_dict`
 - do we really need parsers when we have `from_dict` methods??? If not, these can be dropped
+
