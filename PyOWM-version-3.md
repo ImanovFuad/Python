@@ -29,6 +29,9 @@ This is meant to be a **manifest** for PyOWM version 3
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
 
+## Companion docs
+- migration guide from V2 to V3
+
 ## Diffs with respect v2
 - removes XML schemas and XML dumps for entities
 - removes JSON dumps for entities (only Python dict dumps will be allowed)
