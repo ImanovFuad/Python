@@ -24,6 +24,7 @@ This is meant to be a **manifest** for PyOWM version 3
 - supports py35, py36, py37, **py38**
 
 ## Global library features
+- finalize deprecations already foreseen for v3
 - dict configuration
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
