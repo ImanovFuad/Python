@@ -32,6 +32,8 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## Companion docs
 - migration guide from V2 to V3
+- remove most of the development-oriented docs: users tipically don't care about it
+- add more usage-oriented snippets (eg. recipes)
 
 ## Diffs with respect v2
 - removes XML schemas and XML dumps for entities
