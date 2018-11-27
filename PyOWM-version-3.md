@@ -26,6 +26,7 @@ This is meant to be a **manifest** for PyOWM version 3
 ## Global library features
 - finalize deprecations already foreseen for v3
 - dict configuration
+- make a consistent Exceptions hierarchy and use it
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
