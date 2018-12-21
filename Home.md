@@ -7,6 +7,7 @@ Warnings:
 
 ## Supported OpenWeatherMap APIs:
  - Weather API v2.5
+ - Agriculture API v1.0
  - Air Pollution API v3.0
  - UV Index API v3.0
  - Stations API v3.0
