@@ -1,3 +1,34 @@
+What's new in Release 2.10.0
+----------------------------
+Notably, introducing support for **Agro API free features**!
+
+- New features:
+  - Support for [editing polygons](https://agromonitoring.com/api/polygons) (Agro API)
+  - Support for [current soil data](https://agromonitoring.com/api/current-soil) (Agro API)
+  - Support for [satellite imagery search, download and statistics](https://agromonitoring.com/api/images) (Agro API)
+  - Support for searching current weather on cities inside a bounding box via the new `owm25.weather_at_stations_in_bbox` function
+  - Now it is possible to download [Map Tiles provided by OpenWeatherMap](https://openweathermap.org/api/weathermaps) using the new dedicated `pyowm.tiles.tile_manager.TileManager` client
+
+- Enhancements:
+  - Refactored Weather API code to a dedicated package
+  - Implemented an automated integration and release pipeline
+
+- Bugfixes:
+  - fixed wrong object to JSON dumping when calling `send_measurements()` on Stations API
+  - relaxing hard upper limit on dependency `geojson`: from `geojson>=2.3.0,<2.4` to `geojson>=2.3.0,<3`
+
+- Security:
+  - upgraded version for dependencies `requests` and `urllib3` as known security issues were raised on them
+
+- Python Versions Support:
+  - dropped **Python 3.3** support as it has reached end of life
+
+
+
+
+
+
+
 What's new in Release 2.9.0
 ---------------------------
 **Python 2.7 is now officially deprecated**
