@@ -24,11 +24,6 @@ Notably, introducing support for **Agro API free features**!
   - dropped **Python 3.3** support as it has reached end of life
 
 
-
-
-
-
-
 What's new in Release 2.9.0
 ---------------------------
 **Python 2.7 is now officially deprecated**
