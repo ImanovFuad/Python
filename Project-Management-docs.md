@@ -113,7 +113,7 @@ $ sudo apt-get install python3.2 python 3.3
 ### Update Pipfile.lock
 Use a virtualenv:
 
-    $ cd && make virtualenv pipfilelocker
+    $ cd && virtualenv pipfilelocker
     $ source pipfilelocker/bin/activate
     $ pip install pipenv
     $ cd <path-to-pyowm-folder>
