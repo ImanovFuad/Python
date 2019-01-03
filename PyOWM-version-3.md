@@ -37,6 +37,9 @@ This is meant to be a **manifest** for PyOWM version 3
 - remove most of the development-oriented docs: users tipically don't care about it
 - add more usage-oriented snippets (eg. recipes)
 
+## Wiki
+- Wiki pages must NOT serve as documentation sources! Therefore docs-like pages must be removed and links to them shall be replaced to links to the actual Readthedocs documentation pages
+
 ## Diffs with respect v2
 - removes XML schemas and XML dumps for entities
 - removes JSON dumps for entities (only Python dict dumps will be allowed)
