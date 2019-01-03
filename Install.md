@@ -25,9 +25,9 @@ The .egg will be installed into the system-dependent Python libraries folder:
 
 ## Platform-specific installations
 
-### Windows .exe
+### Windows
 
-Windows users can get an exe installer for earlier PyOWM versions on the [Python Package Index](https://pypi.python.org/pypi/pyowm)
+Windows users can get an exe installer for PyOWM versions on the [Python Package Index](https://pypi.python.org/pypi/pyowm)
 
 ### On ArchLinux with `Yaourt`
 Run:
