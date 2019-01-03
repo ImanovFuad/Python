@@ -37,5 +37,9 @@ Yaourt -S python2-owm  # Python 2.7 (https://aur.archlinux.org/packages/python-o
 Yaourt -S python-owm   # Python 3.x (https://aur.archlinux.org/packages/python2-owm)
 ```
 
-### On Debian/Ubuntu with `apt-get`
-Coming soon...
+### On OpenSuse with `YaST/Zypper`
+Run:
+
+```
+zypper install python-pyowm
+```
