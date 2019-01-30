@@ -31,6 +31,7 @@ This is meant to be a **manifest** for PyOWM version 3
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
+- No more Dockerfiles or Docker images
 
 ## Companion docs
 - migration guide from V2 to V3
