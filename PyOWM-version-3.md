@@ -20,11 +20,11 @@ This is meant to be a **manifest** for PyOWM version 3
 - Map tiles
 
 ## Supported Python versions
-- drops legacy support for Python2 and support for Python 3.4
+- ~~drops legacy support for Python2 and support for Python 3.4~~
 - supports py35, py36, py37, **py38**
 
 ## Global library features
-- finalize deprecations already foreseen for v3
+- ~~finalize deprecations already foreseen for v3~~
 - dict configuration
 - remove caches: pyowm won't feature any caching mechanism, that will be on the client's
 - make a consistent Exceptions hierarchy and use it
