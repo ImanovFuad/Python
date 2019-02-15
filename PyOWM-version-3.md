@@ -21,7 +21,7 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## Supported Python versions
 - ~~drops legacy support for Python2 and support for Python 3.4~~
-- supports py35, py36, py37, **py38**
+- only supports py37+ (therefore also the new **py38**)
 
 ## Global library features
 - ~~finalize deprecations already foreseen for v3~~
@@ -48,3 +48,4 @@ This is meant to be a **manifest** for PyOWM version 3
 - all entities shall have methods: `__repr__`, `from_dict`, `to_dict`
 - do we really need parsers when we have `from_dict` methods??? If not, these can be dropped
 - rely on Python's stdlib implementation of LinkedList
+- clean modules style: add shebangs, file econding, order imports alphabetically
