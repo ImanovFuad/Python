@@ -31,7 +31,7 @@ This is meant to be a **manifest** for PyOWM version 3
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
-- No more Dockerfiles or Docker images
+- ~~No more Dockerfiles or Docker images~~
 - ~~HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)~~
 
 ## Companion docs
