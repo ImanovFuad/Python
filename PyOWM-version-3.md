@@ -44,6 +44,7 @@ This is meant to be a **manifest** for PyOWM version 3
 - Wiki pages must NOT serve as documentation sources! Therefore docs-like pages must be removed and links to them shall be replaced to links to the actual Readthedocs documentation pages
 
 ## Diffs with respect v2
+- write an automation script to generate boilerplate code for new entities
 - removes XML schemas and XML dumps for entities
 - removes JSON dumps for entities (only Python dict dumps will be allowed)
 - remove all Java style getter methods (eg. `get_temperature`), so to allow Pythonic access to obj attributes
