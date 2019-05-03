@@ -35,7 +35,6 @@ This is meant to be a **manifest** for PyOWM version 3
 - ~~HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)~~
 
 ## Companion docs
-- better structure automatic doc generation with Sphinx
 - migration guide from V2 to V3
 - remove most of the development-oriented docs: users tipically don't care about it
 - add more usage-oriented snippets (eg. recipes)
@@ -44,9 +43,9 @@ This is meant to be a **manifest** for PyOWM version 3
 - Wiki pages must NOT serve as documentation sources! Therefore docs-like pages must be removed and links to them shall be replaced to links to the actual Readthedocs documentation pages
 
 ## Diffs with respect v2
-- write an automation script to generate boilerplate code for new entities
-- removes XML schemas and XML dumps for entities
-- removes JSON dumps for entities (only Python dict dumps will be allowed)
+- ~~write an automation script to generate boilerplate code for new entities~~
+- remove XML schemas and XML dumps for entities
+- remove JSON dumps for entities (only Python dict dumps will be allowed)
 - remove all Java style getter methods (eg. `get_temperature`), so to allow Pythonic access to obj attributes
 - all entities shall have methods: `__repr__`, `from_dict`, `to_dict`
 - ~~do we really need parsers when we have `from_dict` methods??? If not, these can be dropped~~
