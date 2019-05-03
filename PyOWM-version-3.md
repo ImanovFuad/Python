@@ -21,7 +21,7 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## Supported Python versions
 - ~~drops legacy support for Python2 and support for Python 3.4~~
-- only supports py37+ (therefore also the new **py38**)
+- ~~only supports py37+ (therefore also the new **py38**)~~
 
 ## Global library features
 - ~~finalize deprecations already foreseen for v3~~
