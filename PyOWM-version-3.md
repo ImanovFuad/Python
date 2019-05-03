@@ -26,15 +26,16 @@ This is meant to be a **manifest** for PyOWM version 3
 ## Global library features
 - ~~finalize deprecations already foreseen for v3~~
 - dict configuration
-- remove caches: pyowm won't feature any caching mechanism, that will be on the client's
+- ~~remove caches: pyowm won't feature any caching mechanism, that will be on the client's~~
 - make a consistent Exceptions hierarchy and use it
 - async/awaitable API calls
 - HTTP/SOCKS proxies support
 - installable on Linux also via `apt` and `rpm`
 - No more Dockerfiles or Docker images
-- HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)
+- ~~HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)~~
 
 ## Companion docs
+- better structure automatic doc generation with Sphinx
 - migration guide from V2 to V3
 - remove most of the development-oriented docs: users tipically don't care about it
 - add more usage-oriented snippets (eg. recipes)
