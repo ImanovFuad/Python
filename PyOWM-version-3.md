@@ -24,6 +24,7 @@ This is meant to be a **manifest** for PyOWM version 3
 - ~~only supports py37+ (therefore also the new **py38**)~~
 
 ## Global library features
+- give the `weatherapi` module exactly the same dignity as other api modules...
 - ~~finalize deprecations already foreseen for v3~~
 - [dict configuration](https://github.com/csparpa/pyowm/issues/248)
 - ~~remove caches: pyowm won't feature any caching mechanism, that will be on the client's~~
