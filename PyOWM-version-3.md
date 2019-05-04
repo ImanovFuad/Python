@@ -25,19 +25,26 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## Global library features
 - ~~finalize deprecations already foreseen for v3~~
-- dict configuration
+- [dict configuration](https://github.com/csparpa/pyowm/issues/248)
 - ~~remove caches: pyowm won't feature any caching mechanism, that will be on the client's~~
+- [ability to inject a custom Logger](https://github.com/csparpa/pyowm/issues/285)
 - make a consistent Exceptions hierarchy and use it
-- async/awaitable API calls
-- HTTP/SOCKS proxies support
-- installable on Linux also via `apt` and `rpm`
+- [async/awaitable API calls](https://github.com/csparpa/pyowm/issues/246)
+- [HTTP/SOCKS proxies support](https://github.com/csparpa/pyowm/issues/233)
+- [installable on Linux also via `apt` and `rpm`](https://github.com/csparpa/pyowm/issues/98)
 - ~~No more Dockerfiles or Docker images~~
 - ~~HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)~~
+- [rename weather forecast functions](https://github.com/csparpa/pyowm/issues/42)
+
+## AgroAPI new features
+ - [NDVI History](https://github.com/csparpa/pyowm/issues/274)
+ - [Roadmap for remaining AgroAPI endpoints implementation](https://github.com/csparpa/pyowm/issues/273)
 
 ## Companion docs
 - migration guide from V2 to V3
 - remove most of the development-oriented docs: users tipically don't care about it
-- add more usage-oriented snippets (eg. recipes)
+- [add code recipes](https://github.com/csparpa/pyowm/issues/262)
+- [document PyOWM 2 maintenance timeline](https://github.com/csparpa/pyowm/issues/265)
 
 ## Wiki
 - Wiki pages must NOT serve as documentation sources! Therefore docs-like pages must be removed and links to them shall be replaced to links to the actual Readthedocs documentation pages
