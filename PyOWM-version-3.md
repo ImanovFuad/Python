@@ -44,8 +44,8 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## Diffs with respect v2
 - ~~write an automation script to generate boilerplate code for new entities~~
-- remove XML schemas and XML dumps for entities
-- remove JSON dumps for entities (only Python dict dumps will be allowed)
+- ~~remove XML schemas and XML dumps for entities~~
+- ~~remove JSON dumps for entities (only Python dict dumps will be allowed)~~
 - remove all Java style getter methods (eg. `get_temperature`), so to allow Pythonic access to obj attributes
 - all entities shall have methods: `__repr__`, `from_dict`, `to_dict`
 - ~~do we really need parsers when we have `from_dict` methods??? If not, these can be dropped~~
