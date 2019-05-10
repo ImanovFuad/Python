@@ -41,6 +41,9 @@ This is meant to be a **manifest** for PyOWM version 3
  - [NDVI History](https://github.com/csparpa/pyowm/issues/274)
  - [Roadmap for remaining AgroAPI endpoints implementation](https://github.com/csparpa/pyowm/issues/273)
 
+## PollutionAPI and UVIndexAPI new features
+ - both will feature a Manager object, which will be instantiated by the new OWM entry point
+
 ## Companion docs
 - migration guide from V2 to V3
 - remove most of the development-oriented docs: users tipically don't care about it
