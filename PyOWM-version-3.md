@@ -44,6 +44,9 @@ This is meant to be a **manifest** for PyOWM version 3
 ## PollutionAPI and UVIndexAPI new features
  - ~~both will feature a Manager object, which will be instantiated by the new OWM entry point~~
 
+## WeatherAPI features
+ - ~~dropped old PyOWM history retrieval features as today they're usable only with OWM paid plans~~
+
 ## Companion docs
 - migration guide from V2 to V3
 - remove most of the development-oriented docs: users tipically don't care about it
