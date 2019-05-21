@@ -24,9 +24,9 @@ This is meant to be a **manifest** for PyOWM version 3
 - ~~only supports py37+ (therefore also the new **py38**)~~
 
 ## Global library features
-- give the `weatherapi` module exactly the same dignity as other api modules...
+- ~~give the `weatherapi` module exactly the same dignity as other api modules...~~
 - ~~finalize deprecations already foreseen for v3~~
-- [dict configuration](https://github.com/csparpa/pyowm/issues/248)
+- ~~[dict configuration](https://github.com/csparpa/pyowm/issues/248)~~
 - ~~remove caches: pyowm won't feature any caching mechanism, that will be on the client's~~
 - [ability to inject a custom Logger](https://github.com/csparpa/pyowm/issues/285)
 - make a consistent Exceptions hierarchy and use it
@@ -35,7 +35,6 @@ This is meant to be a **manifest** for PyOWM version 3
 - [installable on Linux also via `apt` and `rpm`](https://github.com/csparpa/pyowm/issues/98)
 - ~~No more Dockerfiles or Docker images~~
 - ~~HTTP calls timeout is increased to 5 seconds (to allow to safely download satellite images)~~
-- [rename weather forecast functions](https://github.com/csparpa/pyowm/issues/42)
 
 ## AgroAPI new features
  - [NDVI History](https://github.com/csparpa/pyowm/issues/274)
@@ -46,6 +45,8 @@ This is meant to be a **manifest** for PyOWM version 3
 
 ## WeatherAPI features
  - ~~dropped old PyOWM history retrieval features as today they're usable only with OWM paid plans~~
+ - [rename weather forecast functions](https://github.com/csparpa/pyowm/issues/42)
+ - Refactor `CityIDRegistry` to `commons`
 
 ## Companion docs
 - migration guide from V2 to V3
