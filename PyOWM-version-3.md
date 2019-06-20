@@ -46,7 +46,7 @@ This is meant to be a **manifest** for PyOWM version 3
 ## WeatherAPI features
  - ~~dropped old PyOWM history retrieval features as today they're usable only with OWM paid plans~~
  - [rename weather forecast functions](https://github.com/csparpa/pyowm/issues/42)
- - Refactor `CityIDRegistry` to `commons`
+ - ~~Refactor `CityIDRegistry` to `commons`~~
 
 ## Companion docs
 - migration guide from V2 to V3
